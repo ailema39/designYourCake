@@ -113,7 +113,7 @@
 								for (int i = 0; i< color.length; i++){
 									 if (i == color.length - 1)
 										 if (color.length > 1)
-					        			 	colores += "y " + color[i] ;
+					        			 	colores += "e " + color[i] ;
 										 else
 											 colores = color[i] ;
 					        	 	else

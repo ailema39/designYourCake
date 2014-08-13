@@ -106,7 +106,8 @@ public class ArmaTuTortaServlet extends HttpServlet {
 				rd.forward(request, response);
 			}else{
 				Properties propertiesFile = new Properties();
-				propertiesFile.load( new FileInputStream("/home/armatuto/public_html/conf/armatutorta.properties"));
+				//propertiesFile.load( new FileInputStream("/home/armatuto/public_html/conf/armatutorta.properties"));
+				propertiesFile.load( new FileInputStream("/home/spookie/jvm/apache-tomcat-7.0.27/domains/designyourcakes.com/ROOT/conf/armatutorta.properties"));
 				//propertiesFile.load( new FileInputStream("C:\\Program Files (x86)\\Apache Software Foundation\\Tomcat 7.0\\webapps\\armaTuTorta\\conf\\armatutorta.properties"));
 				
 				//propertiesFile.load( new FileInputStream( getServletContext().getInitParameter("properties") ) );

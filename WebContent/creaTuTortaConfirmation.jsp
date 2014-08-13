@@ -113,7 +113,7 @@
 							     for (int i = 0; i< relleno.length; i++){
 						        	 if (relleno.length != 1){
 							        	 if (i == relleno.length - 1)
-							        		 rell += "y " + relleno[i] ;
+							        		 rell += "e " + relleno[i] ;
 							        	 else
 							        		 rell += relleno[i] + ", " ;
 						        	 }else

@@ -57,7 +57,7 @@
 					Estamos a trabalhar para voc&#234;.
 					 
 					<br><br>
-					Obrigado pela sua compreens&#227;o!
+					Obrigado por sua compreens&#227;o!
 			</div>
 			<div class="sectionIMG">
 					<img src="./images/under_construction.png" alt="Image" />

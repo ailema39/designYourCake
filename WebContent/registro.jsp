@@ -63,12 +63,12 @@
 					</div>
 				</div>
 				<div class="registration">
-					<span class="regis-title">Registro </span><br>
+					<span class="regis-title">Cadastro </span><br>
 					<form class="formReg" name="regForm" action="RegisterServlet" method="post" onsubmit="return validateRegCont();" >
 						<div class="block1" >
 							<fieldset>
 								<div class="radioPersonas">
-									<input type="radio" name="typePers" value="0"> Pessoa Singular
+									<input type="radio" name="typePers" value="0"> Pessoa F&iacute;sica
 									<input type="radio" name="typePers" value="1" > Pessoa Jur&iacute;dica 
 								</div>
 								<span class="error" id="errorType" style="float:right; margin-right:50px;">Desculpe, voc&#234; deve indicar se se trata de pessoa singular ou colectiva</span>

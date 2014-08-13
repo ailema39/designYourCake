@@ -52,7 +52,7 @@
 				
 				<div  style="margin-left: 30px;">
 					<img src="images/email.png" width="32" height="32" style="padding-top: 5px;"  alt="Logo"/> E-mail: designyourcake.br@gmail.com<br><br>
-					Mohema - Sao Paulo<br>
+					Moema - Sao Paulo<br>
 					Brasil<br>
 					Loja online<br>
 				</div>

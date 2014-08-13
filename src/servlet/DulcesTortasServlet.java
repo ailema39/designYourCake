@@ -106,8 +106,9 @@ public class DulcesTortasServlet extends HttpServlet {
 				
 					
 				final Properties propertiesFile = new Properties();
-				propertiesFile.load( new FileInputStream( getServletContext().getInitParameter("properties") ) );
+				//propertiesFile.load( new FileInputStream( getServletContext().getInitParameter("properties") ) );
 				//propertiesFile.load( new FileInputStream("/home/armatuto/public_html/conf/armatutorta.properties"));
+				propertiesFile.load( new FileInputStream("/home/spookie/jvm/apache-tomcat-7.0.27/domains/designyourcakes.com/ROOT/conf/armatutorta.properties"));
 				/* Establezco los valores de las cosas pedidas */
 				List<OrderItem> orderItems = new LinkedList<OrderItem>();
 				

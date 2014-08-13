@@ -256,7 +256,7 @@ public class SendEmail  extends Thread  {
 	          
         	addressTo[0] = new InternetAddress(to);
         	mimemessage.setRecipients(Message.RecipientType.TO, addressTo);
-        	mimemessage.setSubject("Tenha um novo comentário ou mensagem", "ISO-8859-1");
+        	mimemessage.setSubject("Você tem uma nova mensagem ou comentário", "ISO-8859-1");
 	          
         	String messa = "Ol&#225;, voc&#234; recebeu um novo coment&#225;rio atrav&#233;s do site Design Your Cake.<br><br>" +
 	          	"Abaixo est&#227;o os dados da pessoa que escreveu e mensagem: <br><br>"

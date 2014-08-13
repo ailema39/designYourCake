@@ -56,24 +56,23 @@
 			<%
 				if (error.equals("successUser")){
 			%>
-				<span class="bienv-title">&iexcl; Modificación exitosa!</span><br><br>
-					Se han modificado exitosamente los datos de tu usuario. 
+				<span class="bienv-title">Modifica&#231;&#227;o com sucesso!</span><br><br>
+					Mudou com sucesso seus dados de usu&#225;rio. 
 			<% }else if (error.equals("errorUser")){ 
 			%>
-				<span class="bienv-title">&iexcl; Error al modificar el usuario!</span><br><br>
-					Se ha presentado un problema al intentar modificar los datos del usuario. Por favor, intente nuevamente.
+				<span class="bienv-title">Falha ao modificar seu usu&#225;rio!</span><br><br>
+					Houve um problema ao tentar alterar seu usu&#225;rio. Por favor, tente novamente.
 
 			<% }%>
 			<%
 				if (error.equals("successPass")){
 			%>
-				<span class="bienv-title">&iexcl; Modificación exitosa!</span><br><br>
-					La contrase&ntilde;a de su usuario fue modificado exitosamente.
+				<span class="bienv-title">Modifica&#231;&#227;o com sucesso!</span><br><br>
+					Sua senha de usu&#225;rio foi alterado com sucesso.
 			<% }else if (error.equals("errorPass")){ 
 			%>
-				<span class="bienv-title">&iexcl; Error al modificar la contrase&ntilde;a!</span><br><br>
-					Se ha presentado un problema al intentar modificar la contrase&ntilde;a. Por favor, aseg&uacute;rese de introducir correctamente su contrase&ntilde;a
-					anterior e intente de nuevo. Si el error persiste, lo invitamos a comunicarse con nosotros para transmitirnos el error.
+				<span class="bienv-title">Erro ao alterar senha!</span><br><br>
+					Houve um problema ao tentar alterar a senha. Por favor, certifique-se de digitar sua senha antiga e tente novamente. Se o erro persistir, n&#243;s convidamos voc&#234; a entrar em contato conosco para resolver o erro.
 			<% }%>
 			</div>
 		</div>

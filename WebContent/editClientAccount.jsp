@@ -76,14 +76,14 @@
 				</div>
 				<div class="registration">
 				<jsp:useBean id="clientInfo" type="domain.Client" scope="request"/> 
-					<span class="regis-title">Editar Datos</span><br>
+					<span class="regis-title">Edi&#231;&#227;o de Dados</span><br>
 					<form name="regForm" action="ClientAccountServlet" method="post" onsubmit="return validateRegCont();" >
 					<input type="hidden" name="clientId" value=<%= client.getId() %>>
 						<div class="block1" >
 							<fieldset>
 								<% if (clientInfo.isCompany() == 0){ %>
 									<div style="float: right; margin-right: 45px; margin-top: -25px;">
-										<input type="radio" name="typePers" value="0" checked="checked"> Perssoa Singular
+										<input type="radio" name="typePers" value="0" checked="checked"> Perssoa F&iacute;sica
 										<input type="radio" name="typePers" value="1" >  Perssoa Jur&#237;dica 
 									</div>
 									<span class="error" id="errorType" style="float:right; margin-right:50px;">Desculpe, voc&#234; deve indicar se se trata de pessoa singular ou colectiva</span>

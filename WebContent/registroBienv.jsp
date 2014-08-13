@@ -79,12 +79,12 @@
 
 			<% }else{ 
 			%>
-					<span class="bienv-title">¡Te pedimos disculpas!</span><br><br>
-					Ha ocurrido un error al intentar registrar su cuenta en el sistema. Por favor, intente m&aacute;s tarde. 
-					De persistir el problema lo invitamos a comunicarse con nosotros para transmitirnos el error.
+					<span class="bienv-title">Pedimos desculpas!</span><br><br>
+					Ocorreu um erro ao tentar registrar sua conta no sistema. Por favor, tente mais tarde. 
+					O problema persistir, n&#243;s convidamos voc&#234; a contactar-nos para transmitir o erro. 
 					
 					<br><br>
-					¡Muchas gracias por elegirnos!
+					Obrigado por nos escolher!
 
 			<% }%>
 			
