@@ -14,7 +14,6 @@ $(document).ready(function(){
 		$(".block-2").show();
 		setPriceTotal();
 		mostrarPaso2();
-		
 	});
   
 	 $("#bt2").click(function(){
@@ -22,7 +21,6 @@ $(document).ready(function(){
 		$(".block-3").show();
 		setPriceTotal();
 		mostrarPaso3();
-		
 	});
 	  
 	$("#bt3").click(function(){
@@ -76,7 +74,7 @@ $(document).ready(function(){
 	$(".rdB2").click(function(){
 		value = $(this).val();
 		/* Retornar a cero el valor de la cantidad en el select*/
-		if (value == 1){
+		if (value != 1){
 			$("#cantCupcakes").val('1');
 			$("#bt2Disable").show();
 			$("#bt2").hide();
@@ -85,7 +83,7 @@ $(document).ready(function(){
 		}else{
 			$("#bt2Disable").hide();
 			$("#bt2").show();
-			$("#calcomania").hide();
+		         //$("#calcomania").hide();
 		}
 		
 		getPrice(2,value);
@@ -237,6 +235,13 @@ $(document).ready(function(){
 	
 	function mostrarPaso2(){
 		$("#pasoImgBase").attr('src',"./images/paso_cupcakes_2.png");
+		val = $('#cantCupcakes').val();
+		priceTemp = (Number(val) * Number(priceCant));
+		var priceAux = priceTotal;
+		priceAux = priceAux + priceTemp;
+		var priceText = priceAux + '.00';
+		$('.price').text(priceText);
+		priceTotalAux = priceAux;
 	}
 	
 	function mostrarPaso3(){
@@ -375,8 +380,7 @@ $(document).ready(function(){
 		var priceText = priceAux + '.00';
 		$('.price').text(priceText);
 		priceTotalAux = priceAux;
-		if (i == 2)
-			priceCant = price;
+		if (i == 2) priceCant = price;
 	}
 	
 	function setPriceTotal(){
@@ -385,7 +389,7 @@ $(document).ready(function(){
 	}
 	
 	$('#cantCupcakes').change(function() {
-		val = $('#cantCupcakes').val();
+	    val = $('#cantCupcakes').val();
 		priceTemp = (Number(val) * Number(priceCant));
 		var priceAux = priceTotal;
 		priceAux = priceAux + priceTemp;
@@ -393,6 +397,8 @@ $(document).ready(function(){
 		$('.price').text(priceText);
 		priceTotalAux = priceAux;
 		cantCapas = val;
+		$(".rdB2").click();
+		
 	});
 	
 	/* Funcion que setea el valor del precio antes de hacer submit al formulario */
@@ -530,7 +536,7 @@ function mostrarImgCubierta(imagen, id){
 		$("#pasoImgBase").attr('src',"./images/paso_cupcakes_4.png");
 		cubierta = "./images/cupcakes/" + imagen;
 		
-		if (id == "57" || id == "58"|| id == "59")
+		if (id == "58"|| id == "59" || id == "81" || id == "82")
 			$("#pasoImgBase").attr('src',"./images/paso_cupcakes_4_block5.png");
 		
 		if (id == "60"){
@@ -832,20 +838,16 @@ function mostrarImgCubierta(imagen, id){
 		sabor1 = saborImg1;
 		sabor2 = saborImg2;
 		sabor3 = saborImg3;
-		saborP3 = saborImg3;
 		
 	}
 	
 	function setSaborP(saborImg1, saborImg2, saborImg3,  id1, id2, id3){
 		saborP1 = saborImg1;
 		saborP2 = saborImg2;
-		saborP3 = saborImg3;
+		saborP3 = saborImg2;
 		
 		idP1 = id1;
 		idP2 = id2;
-		idP3 = id3;
-		
+		idP3 = id2;
 	}
-	
-
 	

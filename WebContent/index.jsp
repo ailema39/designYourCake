@@ -22,14 +22,8 @@
 		$("a[rel*=leanModal]").leanModal({ top : 200, overlay : 0.4, closeButton: ".modal_close" });
 	});
 	</script>
-	<script type="text/javascript" charset="utf-8">
-		function inhabilitar(){ 
-		   	return false;
-		} 
-		document.oncontextmenu=inhabilitar;
-	</script>
 </head>
-<body oncontextmenu="return inhabilitar()">
+<body >
 <%
 	HttpSession infoPage = request.getSession();
 	session.setAttribute("prevPage", "HomePageServlet");
@@ -40,7 +34,7 @@
 		<div>
 			<div>
 				<div id="logo">
-					<a href="index.html"><img src="images/logo5.png" alt="Logo"/></a>
+					<a href="HomePageServlet"><img src="images/logo5.png" alt="Logo"/></a>
 				</div>
 				<jsp:include page="header.jsp"></jsp:include>
 			</div>
@@ -59,31 +53,35 @@
 		String[] archivos = FilesName.getFilesNamesIndex(request);;	
     %>	
 	<div id="content">
-		<div class="home">
-			<div class="aside">
-				<p>En <strong>Design Your Cake</strong> gostamos fazer a cozinha uma arte, utilizando a melhor mat&#233;ria-prima de primera qualidade e priorizando o sabor dos alimentos.</p>
-				<p>Fazer bolos para todas as ocasi&#245;es com ingredientes, sabores e desenhos de sua escolha. O esp&#237;rito de <strong>Design Your Cake</strong> est&#225; no alimento como um estilo de vida ea 
-				transmiss&#227;o de que o prazer em cada um dos nossos produtos.</p>
-				<p>Escolha a forma, seus sabores favoritos, recheado e a cobertura que voc&#234; gosta... tudo ao seu gosto, n&#243;s vamos fazer o resto! &nbsp;<a href="underConstruction.jsp" class="readmore"> Solicite aqui o seu pedido!</a></p>
-			</div>
-			<div class="section">
-				<div id="jqb_object">
-					<div class="jqb_slides">
-						<% for (int i = 0 ; i < archivos.length; i++){
-							String src = "./images/galeria_inicio/" + archivos[i];
-						%>
-							<div class="jqb_slide" title="slide title" ><a href="GalleryServlet"><img src="<%= src %>"  height="220" width="340"/></a></div>
-						<% } %>
-					</div>
-					
-					<div class="jqb_bar">
-						<div id="btn_next" class="jqb_btn jqb_btn_next"></div>
-						<div id="btn_pauseplay" class="jqb_btn jqb_btn_pause"></div>
-						<div id="btn_prev" class="jqb_btn jqb_btn_prev"></div>
-					</div>
-				</div>
-			</div>
-		</div>
+        <div class="back"></div>
+    		<div class="home">
+    			<div class="aside">
+                    <p><span class="dyc">Design Your Cake</span> nascido em Caracas h&aacute; 4 anos com a id&eacute;ia de combiar os melhores sabores,
+                     com desenhos exclusivos e criados para cada pessoa. </p>
+                    <p>Voc&#234; n&#227;o tem que se ajustar a um determinado tipo de bolo, voc&#234; pode criar o seu bolo favorito, com o sabor que voc&#234; 
+                    gosta e todos os recheios que imagina! </p>
+                    <p>Cada um dos nossos sabores &eacute; feito com os melhores ingredientes para alcançar o melhor resultado, voc&#234; s&oacute; tem que imaginar,
+                    n&oacute;s fazemos o resto. </p>
+                    <p>Para n&oacute;s cada pessoa &eacute; &uacute;nica e, portanto, merecem um bolo &uacute;nico.</p>
+                </div>
+                <div class="section">
+    				<div id="jqb_object">
+    					<div class="jqb_slides">
+    						<% for (int i = 0 ; i < archivos.length; i++){
+    							String src = "./images/galeria_inicio/" + archivos[i];
+    						%>
+    							<div class="jqb_slide" title="slide title" ><a href="GalleryServlet"><img src="<%= src %>"  height="220" width="340"/></a></div>
+    						<% } %>
+    					</div>
+    					
+    					<div class="jqb_bar">
+    						<div id="btn_next" class="jqb_btn jqb_btn_next"></div>
+    						<div id="btn_pauseplay" class="jqb_btn jqb_btn_pause"></div>
+    						<div id="btn_prev" class="jqb_btn jqb_btn_prev"></div>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
 	</div>
 	<div class="push"></div>
 </div>

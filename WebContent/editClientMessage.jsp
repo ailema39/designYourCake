@@ -35,7 +35,7 @@
 		<div>
 			<div>
 				<div id="logo">
-					<a href="index.html"><img src="images/logo5.png" alt="Logo"/></a>
+					<a href="HomePageServlet"><img src="images/logo5.png" alt="Logo"/></a>
 				</div>
 				<jsp:include page="header.jsp"></jsp:include>
 			</div>

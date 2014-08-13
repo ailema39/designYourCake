@@ -53,7 +53,7 @@
 			<span class="divisor">|</span> 
 			<a href="ClientAccountServlet?id=<%= client.getId() %>" class="pestCuenta"> Minha conta </a>
 			<span class="divisor3">|</span> 
-			<a href="LogoutPageServlet" class="pestSalir"> Sair <img src="images/exit.png" width="18" height="18"></a>
+			<a href="LogoutPageServlet" class="pestSalir"> Sair <img src="images/exit.png" width="14" height="14" style="margin-left: 2px;"></a>
 			
 	</div>
 <% 				

@@ -29,14 +29,8 @@
 		});
 	});
 	</script> 
-	<script type="text/javascript" charset="utf-8">
-		function inhabilitar(){ 
-		   	return false;
-		} 
-		document.oncontextmenu=inhabilitar;
-	</script>
 </head>
-<body oncontextmenu="return inhabilitar()">
+<body>
 <%
 	HttpSession infoPage = request.getSession();
 	session.setAttribute("prevPage", "ocasionesEspeciales.jsp");
@@ -48,7 +42,7 @@
 		<div>
 			<div>
 				<div id="logo">
-					<a href="index.html"><img src="images/logo5.png" alt="Logo"/></a>
+					<a href="HomePageServlet"><img src="images/logo5.png" alt="Logo"/></a>
 				</div>
 				<jsp:include page="header.jsp"></jsp:include>
 			</div>
@@ -65,41 +59,40 @@
 	</div>
 	<div id="content">
 		<div class="home">
-			<div class="title-ocEsp"> Tenha em mente um desenho especial para um bolo? Quer criar cupcakes especiais? <br>
-				Voc&#234; est&#225; no lugar certo! Escreva a sua ideia, envie-nos imagens de refer&#234;ncia que voc&#234; deseja usar e deixe-nos fazer o resto.
-			</div>
 			<% if (client != null){ %>
 			<div class="coments-ocEsp">
+                <div class="titleTortas">Ocasi&#245;es Especiais</div>
 				<form name="ocasEspForm" action="OcasionesEspecialesServlet" method="post" enctype="multipart/form-data" onsubmit="return ocaEsp();" >
 					<fieldset>
-						<label for="name">¿Cu&aacute;l es tu ocasi&oacute;n especial?:</label>
+						<label for="name">Qual &eacute; sua ocasião especial?:</label>
 						<input type="text" name="txtName" id="txtName" size="25" maxlength="50" />
-						<span class="error" id="errorName">Por favor, introduzca su ocasión especial.</span>
-						<div style="font-size: 10px; font-family: Arial;">Ejemplo: boda, bautizo, entre otros. </div><br>
-						<label for="name" style="height:60px;">¿Cu&aacute;les de nuestros productos deseas ordenar?:</label>
-						<input type="checkbox" name="eventoT" id="eventoT" value="1">Torta<br>
-						<input type="checkbox" name="eventoC" id="eventoC" value="2">Cupcakes <br>
-						<input type="checkbox" name="eventoG" id="eventoG" value="3">Gelatina 
-						<span class="error" id="errorProducto">Por favor, seleccione al menos uno producto.</span><br><br>
-						<label for="name">¿Tienes un dise&ntilde;o en mente? C&aacute;rgalo aqu&iacute;:</label>
-						<input type="file" name="txtImage" id="txtImage" maxlength="50" lang="es" /> <br><br><br>
-						<label for="name"  >N&uacute;mero apr&oacute;ximado de invitados:</label>
-						<input type="text" name="txtInv" id="txtInv" size="15" maxlength="50" /> <br>
-						<span class="error" id="errorInv">Por favor, ingrese un número estimado de invitados</span><br>
-						<label for="name">Cu&eacute;ntanos m&aacute;s acerca de tu idea:</label>
-						<textarea name="idea" style="resize: none;"></textarea> <br>
+						<span class="error" id="errorName">Por favor, digite seu ocasião especial.</span>
+						<div style="font-size: 10px; font-family: Arial;">Exemplo: casamento, aniversário.</div><br/>
+						<label for="name" style="height:60px;">Quais os produtos que gostaria de pedir?:</label>
+						<input type="checkbox" name="eventoT" id="eventoT" value="1"/>Bolo<br/>
+						<input type="checkbox" name="eventoC" id="eventoC" value="2"/>Mesa de doces<br/>
+						<input type="checkbox" name="eventoG" id="eventoG" value="3"/>Bolo com mesa de doces
+						<span class="error" id="errorProducto">Por favor, selecione pelo menos um produto.</span><br/><br/>
+						<label for="name">¿Já tem um desenho que você gosta? Anexá-lo aquí::</label>
+						<input type="file" name="txtImage" id="txtImage" maxlength="50" lang="es" /> <br/><br/><br/>
+						<label for="name"  >Número de convidados:</label>
+						<input type="text" name="txtInv" id="txtInv" size="15" maxlength="50" /> <br/>
+						<span class="error" id="errorInv">Por favor, digite número de convidados:</span>
+                        <div style="font-size: 10px; font-family: Arial;">Exemplo: 5, 25...</div><br/>
+						<label for="name">Conte-nos todos os detalhes que você quiser:</label>
+						<textarea name="idea" style="resize: none;"></textarea> <br/>
 					</fieldset>
 					<div class="ocEsp-button">
-							<input type="submit" name="sbmtButton" class="button" value=" Solicitar Presupuesto "  />
+							<input type="submit" name="sbmtButton" class="button" value="Pedir Orçamento"  />
 					</div>
 					</form>
 			</div>
 			<% }else{ %>
 					<br><br>
 					<div style="text-align: justify; margin-left: 30px;">
-						Desculpe, para usar esta se&#231;&#227;o voc&#234; precisa estar cadastrado. <br><br>
+						Desculpe, para usar esta se&#231;&#227;o voc&#234; precisa estar cadastrado. <br/><br/>
 						
-						Se voc&#234; n&#227;o estiver cadastrado, <a href="registro.jsp" class="readmore"> cadastre-se aqu&#237;.</a> <br><br>
+						Se voc&#234; n&#227;o estiver cadastrado, <a href="registro.jsp" class="readmore"> cadastre-se aqu&#237;.</a> <br/><br/>
 						
 						Se voc&#234; j&#225; &#233; cadastrado, <a href="#signup"  rel="leanModal" id="go" class="readmore"> entre aqu&#237;.</a>
 					</div>

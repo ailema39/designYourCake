@@ -17,14 +17,8 @@
 		$("a[rel*=leanModal]").leanModal({ top : 200, overlay : 0.4, closeButton: ".modal_close" });
 	});
 	</script>
-	<script type="text/javascript" charset="utf-8">
-		function inhabilitar(){ 
-		   	return false;
-		} 
-		document.oncontextmenu=inhabilitar;
-	</script>
 </head>
-<body oncontextmenu="return inhabilitar()">
+<body >
 <%
 	HttpSession infoPage = request.getSession();
 	session.setAttribute("prevPage", "contacto.jsp");
@@ -35,7 +29,7 @@
 		<div>
 			<div>
 				<div id="logo">
-					<a href="index.html"><img src="images/logo5.png" alt="Logo"/></a>
+					<a href="HomePageServlet"><img src="images/logo5.png" alt="Logo"/></a>
 				</div>
 				<jsp:include page="header.jsp"></jsp:include>
 			</div>

@@ -33,8 +33,14 @@
 		$("#datepicker").datepicker({minDate: +1});
 	});
 	</script> 
-	</head>
-<body>
+	<script type="text/javascript" charset="utf-8">
+		function inhabilitar(){ 
+		   	return false;
+		} 
+		document.oncontextmenu=inhabilitar;
+	</script>
+</head>
+<body oncontextmenu="return inhabilitar()">
 <%
 	HttpSession infoPage = request.getSession();
 	session.setAttribute("prevPage", "DulcesTortasServlet?typeId=3");
@@ -64,7 +70,7 @@
 		</div>
 	</div>
 	<div id="content">
-		<form id="formDulcesTortas" action="ContactServlet" method="get" id="confirm">
+		<form id="formDulcesTortas" action="DulcesTortasServlet" method="post" id="confirm">
 		<input type="hidden" id="priceDulcCake" name="priceDulcCake" value = "0">
 	
 		<div class="home">
@@ -73,34 +79,50 @@
 				<jsp:useBean id="options" type="java.util.ArrayList<domain.StepOption>" scope="request"/>  	
         		<% if (client != null){ %>
 				<div class="cakes">
-                    <div class="st1">
-    					<div class="dt-title">Pirulitos recheados</div>
-                        Dois biscoitos, recheados com o sabor de sua escolha e coberto com chocolate.
-    					<br/><br/>
-    					<div class="dt-title">Cake Pops</div>
-                        Delicioso bolo de chocolate, baunilha, red velvet ou cookie em forma de bolas, coberto de chocolate meio amargo ou branco.<br/><br/>
-    					<div class="dt-title">Cake Shots</div>
-                        Delicados doces e bolos apresentado em copinhos, uma op&#231;&#227;o exclente para decorar a sua mesa e experimentar um pouco de tudo. 
-                    	<div><ul>
-                            <li>Bolo duplo Chocolate</li>
-                        	<li>Mouse de Maracuy&aacute;</li>
-                        	<li>Torta de lim&#227;o</li>
-                        	<li>Tiramis&uacute;</li>
-                        	<li>Delicia de Morango</li>
-                         </ul></div>
-                     </div>
-                    <div class="st2" style="display: none;">
-    					<div class="dt-title">Bolo de Cenoura</div>
-                        Con cobertura crocante ou cobertura de cream cheese.<br/><br/>
-    					<div class="dt-title">Cheesecake de Oreo</div>
-                        Uma mistura entre um cheesecake macio e biscoitos Oreo.
-					</div>
-                    <img src="../images/1407908056_prev.png" class="dt-prev" style="display: none;"/>
-                    <img src="../images/1407908056_next.png" class="dt-next"/>
-                    <div class="dt-button">
-						<input type="submit" name="sbmtButton" class="button" value="Pedir Or&#231;amento"  /><br />
-                        <span class="span-inq">Indique que voc&#234; quer e n&oacute;s enviaremos o seu or&#231;amento.</span>
+					<table style="border:none;">
+						<%
+							for(int i= 1; i<= options.size(); i++) { 	
+								int aux = i -1;
+								domain.StepOption o = options.get(aux);
+								hashMap.put(i +"", o.getName());
+								hashMapPrice.put(o.getName(), o.getPrice());
+								hashMapId.put(o.getName(), o.getId());
+								String description = o.getDescription();
+								String imgDescription = "";
+								if (description != null && !description.equals(""))
+									imgDescription = "<img  id=\"imgDulcesTortas\" src=\"./images/question.png\" title=\"" +  description  + "\"/>";
+						%>
+						<tr height="28">
+							<td width="220px"> 
+								<input type="checkbox" name="dulcesTortas" class="dulcesTortasCheck" value="<%= i %>" > <%= o.getName() %> <%= imgDescription %></td>
+							<td width="100px">Bs.<span class="price-int<%= i %>"> <%= o.getPrice() %></span> </td>
+							<td>
+								<div class="sel<%= i %>" style="display:none">
+								Cantidad: &nbsp;
+								<select class="selDulcesTortas<%= i %>" name="selDulcesTortas<%= i %>"> 
+									<option value="0"> - </option>
+									<% for(int j = 1; j < 7; j++){ %>
+									<option value="<%= j %>"><%= j %></option>
+									<% } %>
+								</select>
+								</div>
+								
+							</td>
+						</tr>
+						<% }
+						session.setAttribute("hashMapDulcesTortas", hashMap);
+						session.setAttribute("hashMapPriceDulcesTortas", hashMapPrice);
+						session.setAttribute("hashMapIdDulcesTortas", hashMapId);
+						%>
+					</table>
+					<br>
+					<div class="dt-button" style="display: none">
+						<input type="submit" name="sbmtButton" class="button" value="Ordenar"  />
 					</div> 
+					<div class="dt-button-dis">
+						<input type="button" name="sbmtButton" class="buttonDisable" value="Ordenar"  />
+					</div> 
+					<div class="subtotal-section"> Sub-total: Bs. <span class="price" id="priceTotal"> 0,00</span> </div><br>
 				</div>	
 				<% }else{ %>
 					<br>

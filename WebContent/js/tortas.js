@@ -36,10 +36,10 @@ $(document).ready(function() {
 	$("#bt4").click(function(){
 		name  = getName(4,capas);
 		setPriceTotal();
-		if (name.toLowerCase().indexOf("sin") >= 0){
+		if (name.toLowerCase().indexOf("sem") >= 0){
+			mostrarPaso6_block5();
 			$(".block-4").hide();
 			$(".block-6").show();
-			mostrarPaso6_block5();
 		}else{
 			$(".block-4").hide();
 			$(".block-5").show();
@@ -103,7 +103,7 @@ $(document).ready(function() {
 	getPrice(4,j);
 	name  = getName(4,j);
 	capas = j;
-	mostrarPaso4();
+	mostrarPaso4(j);
   });
   
   /* Click en alguna opcion del Paso 5*/
@@ -125,7 +125,7 @@ $(document).ready(function() {
 		var j = $(this).val();
 		name = getName(6,j);
 		getPrice(6,j);
-		//mostrarSaborCubierta(this);
+		mostrarSaborCubierta(this, j);
 	});
   
 	function mostrarSaborCapa(element, j){
@@ -187,12 +187,11 @@ $(document).ready(function() {
 		$("#pasoImgBase").attr('src',"./images/paso_torta_3.png");
 	}
 	
-	function mostrarPaso4(){
-		$("#pasoImgBase").attr('src',"./images/paso_torta_4.png");
-	}
-	
-	function mostrarPaso4_block5(){
-		$("#pasoImgBase").attr('src',"./images/paso_torta_4_block5.png");
+	function mostrarPaso4(j){
+		if (j != 4)
+			$("#pasoImgBase").attr('src',"./images/paso_torta_4.png");
+		else 
+			$("#pasoImgBase").attr('src',"./images/paso_torta_4_block5.png");
 	}
 	
 	function mostrarPaso5(){
@@ -422,8 +421,8 @@ function prueba(texto, i, id, element){
 			mostrarPonque(texto);
 		else if (i ==4)
 			mostrarCapas(texto, id);
-		else if (i == 6)
-			mostrarSaborCubierta(texto, id);
+		/*else if (i == 6)
+			mostrarSaborCubierta(texto, id);*/
 		
 }
 
@@ -438,7 +437,6 @@ function mostrarCapas(imagen, id){
 		$("#pasoImgCapas").attr('src',"./images/tortas/" + imagen);
 	else{
 		$("#pasoImgCapas").hide();
-		mostrarPaso4_block5();
 		return;
 	}
 	$("#pasoImgCapas").show();
@@ -446,16 +444,17 @@ function mostrarCapas(imagen, id){
 
 
 function mostrarSaborCubierta(imagen, id){
-	
-	if (id != 42){
+	if (id != 9){
 			$("#bt6Disable").hide();
 			$("#txtImage").hide();
 			$("#bt6").show();
-			$("#pasoImgCubierta").attr('src',"./images/tortas/" + imagen);
 			return;
-	}else if (id == 42){ 
+	}else{ 
 		$("#txtImage").show();
 	}
-	
   }
  
+/*function mostrarPaso4_blocke5(){
+	$("#pasoImgBase").attr('src',"./images/paso_torta_4_block5.png");
+	alert("a");
+}*/

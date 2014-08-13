@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$("a[rel*=leanModal]").leanModal({ top : 200, overlay : 0.4, closeButton: ".modal_close" });
+	/*$("a[rel*=leanModal]").leanModal({ top : 200, overlay : 0.4, closeButton: ".modal_close" });
 
 	
 	$(".dulcesTortasCheck").click(function() {
@@ -67,13 +67,13 @@ $(document).ready(function() {
 	
 	
 	/* Actualize el precio al seleccionar la cantidad de tortas */
-	$('select').change(function(){
+	/*$('select').change(function(){
 		cambiarPrecio(2);
 		verificarSelectsVacios();
 	});
 	
 	/* Verifica si hay al menos un checkbox seleccionado, sino lo hay bloquea el botón de ordenar*/
-	function verificarCheckboxes(){
+	/*function verificarCheckboxes(){
 		
 		var checkboxes = document.getElementsByClassName('dulcesTortasCheck');
 		var cont = 0; 
@@ -89,7 +89,7 @@ $(document).ready(function() {
 	}
 	
 	/* Verifica que todos los checkboxes que han sido seleccionados tenga su cantidad respectiva */
-	function verificarSelectsVacios(){
+	/*function verificarSelectsVacios(){
 		var checkboxes = document.getElementsByClassName('dulcesTortasCheck');
 		var bool = false;	
 		for (var x = 0; x < checkboxes.length; x++) {
@@ -121,5 +121,19 @@ $(document).ready(function() {
 	  var priceText = Number($("#priceTotal").text());
 	  $("#priceDulcCake").val(priceText);
 	  return true;
-	});
+	});*/
+    
+    $(".dt-next").click(function(){
+        $(".st1").hide();
+        $(".st2").show();
+        $(".dt-prev").show();
+        $(".dt-next").hide();
+    })
+    
+    $(".dt-prev").click(function(){
+        $(".st2").hide();
+        $(".st1").show();
+        $(".dt-prev").hide();
+        $(".dt-next").show();
+    })
 });

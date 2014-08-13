@@ -22,10 +22,10 @@
 		function inhabilitar(){ 
 		   	return false;
 		} 
-		document.oncontextmenu=inhabilitar;
+		/*document.oncontextmenu=inhabilitar;*/
 	</script>
 </head>
-<body oncontextmenu="return inhabilitar()">
+<body oncontextmenu="">
 <%
 	HttpSession infoPage = request.getSession();
 	session.setAttribute("prevPage", "ArmaTuTortaServlet?typeId=1");
@@ -40,7 +40,7 @@
 		<div>
 			<div>
 				<div id="logo">
-					<a href="index.html"><img src="images/logo5.png" alt="Logo"/></a>
+					<a href="HomePageServlet"><img src="images/logo5.png" alt="Logo"/></a>
 				</div>
 				<jsp:include page="header.jsp"></jsp:include>
 			</div>
@@ -103,7 +103,7 @@
 					%>
 					<% if ( i == 1) { %>
 					<div class="block">
-						<p> <span class="step1"> Paso <%= i %>: </span> <span class="desc<%= i %>"> <%= actualOrder.getName() %> </span></p>
+						<p> <span class="step1"> Passo <%= i %>: </span> <span class="desc<%= i %>"> <%= actualOrder.getName() %> </span></p>
 						<div class="options-steps">
 								<% for(int j= 1; j<= actualOptions.size(); j++) {
 									int aux2 = j - 1;
@@ -118,15 +118,15 @@
 									hashMapId.put(i + "" +j, step.getId());
 								%>
 							
-							<input  class="rdB<%= i %>" onClick="prueba('<%= imagen %>','<%= i %>', '<%= step.getId() %>', this);" type="<%= type %>" name="<%= i %>" value="<%= j %>" > <span id="name<%= i+ "" +j%>">  <%= step.getName()%><%= imgDescription %></span> <br>
-							<span style="display:none;" class="price-int<%= i %><%= j %>"> <%= step.getPrice() %></span>
+							<label><input  class="rdB<%= i %>" onClick="prueba('<%= imagen %>','<%= i %>', '<%= step.getId() %>', this);" type="<%= type %>" name="<%= i %>" value="<%= j %>" > <span id="name<%= i+ "" +j%>">  <%= step.getName()%><%= imgDescription %></span> <br>
+							<span style="display:none;" class="price-int<%= i %><%= j %>"> <%= step.getPrice() %></span></label>
 							<% }
 							%>
 						</div>
 						<span style="display: inline;" class="buttons">
-							<input  type="button" name="sbmtButtonPrev" class="buttonR" value="Reiniciar" />
-							<input  type="button" name="sbmtButton" class="buttonDisable" value="Siguiente" id="bt1Disable"  />
-							<input  type="button" name="sbmtButton" class="button" value="Siguiente"  style="display: none;" id="bt<%= i %>" />
+							<input  type="button" name="sbmtButtonPrev" class="buttonR" value="Começar de novo" />
+							<input  type="button" name="sbmtButton" class="buttonDisable" value="Próxima" id="bt1Disable"  />
+							<input  type="button" name="sbmtButton" class="button" value="Próxima"  style="display: none;" id="bt<%= i %>" />
 						</span>						
 					</div>
 				<% 
@@ -136,7 +136,7 @@
 				%>	
 						<div class="block-<%=i%>" style="display:none">
 							<p>
-							<span class="step1"> Paso <%= i %>: </span> <span class="desc<%= i %>"> <%= actualOrder.getName() %> </span> 
+							<span class="step1"> Passo <%= i %>: </span> <span class="desc<%= i %>"> <%= actualOrder.getName() %> </span> 
 							</p>
 							<div class="options-steps">
 								<div id="capa1" style="display:none">
@@ -208,9 +208,9 @@
 					
 						
 						<span style="display: inline;" class="buttons">
-							<input  type="button" name="sbmtButtonPrev" class="buttonR" value="Reiniciar"  />
-							<input  type="button" name="sbmtButton" class="buttonDisable" value="Siguiente" id="bt<%= i %>Disable"  />
-							<input  type="button" name="sbmtButton" class="button" value="Siguiente"  style="display: none;" id="bt<%= i %>" />
+							<input  type="button" name="sbmtButtonPrev" class="buttonR" value="Começar de novo"  />
+							<input  type="button" name="sbmtButton" class="buttonDisable" value="Próxima" id="bt<%= i %>Disable"  />
+							<input  type="button" name="sbmtButton" class="button" value="Próxima"  style="display: none;" id="bt<%= i %>" />
 						</span>	
 						</div>						
 					
@@ -218,7 +218,7 @@
 				
 					<div class="block-<%=i%>" style="display:none">
 						<p>
-						<span class="step1"> Paso <%= i %>: </span> <span class="desc<%= i %>"> <%= actualOrder.getName() %> </span> </p>
+						<span class="step1"> Passo <%= i %>: </span> <span class="desc<%= i %>"> <%= actualOrder.getName() %> </span> </p>
 						<div class="options-steps">
 								<% for(int j= 1; j<= actualOptions.size(); j++) {
 									int aux2 = j - 1;
@@ -237,19 +237,19 @@
 										
 								%>
 									<%
-										if (!step.getName().contains("imagen")){
+										if (step.getId() != 42){
 									%>
 										<div class="options-steps-left">
-											<input  class="rdB<%= i %>" onClick="prueba('<%= imagen %>','<%= i %>', '<%= step.getId() %>', this);" type="<%= type %>" name="<%= i %>" value="<%= j %>" > <span id="name<%= i+ "" +j%>">  <%= step.getName()%><%= imgDescription  %> </span> <br>
-											<span style="display:none;" class="price-int<%= i %><%= j %>"> <%= step.getPrice() %></span>
+											<label><input  class="rdB<%= i %>" onClick="prueba('<%= imagen %>','<%= i %>', '<%= step.getId() %>', this);" type="<%= type %>" name="<%= i %>" value="<%= j %>" > <span id="name<%= i+ "" +j%>">  <%= step.getName()%><%= imgDescription  %> </span> <br>
+											<span style="display:none;" class="price-int<%= i %><%= j %>"> <%= step.getPrice() %></span></label>
 										</div>	
 									<%
 										}else{
 									%>
 										<div class="options-steps-especial">
-											<input  class="rdB<%= i %>"  onClick="prueba('<%= imagen %>','<%= i %>', '<%= step.getId() %>', this);" type="<%= type %>" name="<%= i %>" value="<%= j %>" > <span id="name<%= i+ "" +j%>">  <%= step.getName()%><%= imgDescription  %> </span>
-											<span style="display:none;" class="price-int<%= i %><%= j %>"> <%= step.getPrice() %></span>
-											<input type="file" accept='image/*' name="txtImage" id="txtImage" maxlength="25" lang="es"  style="display:none;"/>  <br>
+											<label><input  class="rdB<%= i %>"  onClick="prueba('<%= imagen %>','<%= i %>', '<%= step.getId() %>', this);" type="<%= type %>" name="<%= i %>" value="<%= j %>" > <span id="name<%= i+ "" +j%>">  <%= step.getName()%><%= imgDescription  %> </span>
+											<span style="display:none;" class="price-int<%= i %><%= j %>"> <%= step.getPrice() %></span></label>
+											<input type="file" accept='image/*' name="txtImage" id="txtImage" maxlength="25" lang="es" style="display: none;" />  <br>
 										</div>
 									
 									<%	
@@ -259,8 +259,8 @@
 								<%
 									}else{
 								%>
-									<input  class="rdB<%= i %>" onClick="prueba('<%= imagen %>','<%= i %>', '<%= step.getId() %>', this);" type="<%= type %>" name="<%= i %>" value="<%= j %>" > <span id="name<%= i+ "" +j%>">  <%= step.getName()%> </span> <br>
-									<span style="display:none;" class="price-int<%= i %><%= j %>"> <%= step.getPrice() %></span>
+									<label><input  class="rdB<%= i %>" onClick="prueba('<%= imagen %>','<%= i %>', '<%= step.getId() %>', this);" type="<%= type %>" name="<%= i %>" value="<%= j %>" > <span id="name<%= i+ "" +j%>">  <%= step.getName()%> </span> <br>
+									<span style="display:none;" class="price-int<%= i %><%= j %>"> <%= step.getPrice() %></span></label>
 								
 								<% 
 									}
@@ -270,16 +270,16 @@
 						</div>
 				<% if (i != 6){%>
 					<span style="display: inline;" class="buttons">
-							<input  type="button" name="sbmtButtonPrev" class="buttonR" value="Reiniciar"  />
-							<input  type="button" name="sbmtButton" class="buttonDisable" value="Siguiente" id="bt<%= i %>Disable"  />
-							<input  type="button" name="sbmtButton" class="button" value="Siguiente"  style="display: none;" id="bt<%= i %>" />
+							<input  type="button" name="sbmtButtonPrev" class="buttonR" value="Começar de novo"  />
+							<input  type="button" name="sbmtButton" class="buttonDisable" value="Próxima" id="bt<%= i %>Disable"  />
+							<input  type="button" name="sbmtButton" class="button" value="Próxima"  style="display: none;" id="bt<%= i %>" />
 					</span>		
 					
 				<% }else{%>
 					<span style="display: inline;" class="buttons">
-						<input  type="button" name="sbmtButtonPrev" class="buttonR" value="Reiniciar"  />
-						<input  type="button" name="sbmtButton" class="buttonDisable" value="Siguiente" id="bt<%= i %>Disable"  />
-						<input  type="submit" name="sbmtButton" class="button" value="Ordenar"  style="display: none;" id="bt<%= i %>" />
+						<input  type="button" name="sbmtButtonPrev" class="buttonR" value="Começar de novo"  />
+						<input  type="button" name="sbmtButton" class="buttonDisable" value="Próxima" id="bt<%= i %>Disable"  />
+						<input  type="submit" name="sbmtButton" class="button" value="Ordenação"  style="display: none;" id="bt<%= i %>" />
 					</span>		
 				<% }%>
 				</div>
@@ -311,7 +311,7 @@
 			</div>
 			
 			<% if (client != null){ %>
-				<div class="subtotal-sectionTortas"> Sub-total: Bs. <span class="price"> 0,00</span> </div>
+				<div class="subtotal-sectionTortas"> Sub-total: <span class="price"> 0,00</span> </div>
 			<% } %>
 			<% if (client != null){ %>
 			<div class="banner">
