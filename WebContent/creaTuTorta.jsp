@@ -18,14 +18,8 @@
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
 	<script type="text/javascript" src="js/tortas.js"></script>
-	<script type="text/javascript" charset="utf-8">
-		function inhabilitar(){ 
-		   	return false;
-		} 
-		/*document.oncontextmenu=inhabilitar;*/
-	</script>
 </head>
-<body oncontextmenu="">
+<body>
 <%
 	HttpSession infoPage = request.getSession();
 	session.setAttribute("prevPage", "ArmaTuTortaServlet?typeId=1");

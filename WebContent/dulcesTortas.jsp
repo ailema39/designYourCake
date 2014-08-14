@@ -8,32 +8,12 @@
 	<title>Design Your Cake</title>
 	<link href='http://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Economica' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="css/demos.css" />
-	<link rel="stylesheet" type="text/css" href="css/ui.theme.css" />
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
-	
 	<link rel="shortcut icon" href="images/ico.ico">
-	<!--[if IE 8]>
-		<link rel="stylesheet" type="text/css" href="css/ie8.css" />
-	<![endif]-->
-	<!--[if IE 7]>
-		<link rel="stylesheet" type="text/css" href="css/ie7.css" />
-	<![endif]-->
-	<!--[if IE 6]>
-		<link rel="stylesheet" type="text/css" href="css/ie6.css" />
-	<![endif]-->
-	
-	<script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
 	<script type="text/javascript" src="js/dulcesTortas.js"></script>
-	<script type="text/javascript" src="js/ui.core.js"></script>
-	<script type="text/javascript" src="js/ui.datepicker.js"></script>
-	<script> 
-	$(function() {
-		$("#datepicker").datepicker({minDate: +1});
-	});
-	</script> 
-	</head>
+</head>
 <body>
 <%
 	HttpSession infoPage = request.getSession();

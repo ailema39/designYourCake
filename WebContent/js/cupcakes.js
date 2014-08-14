@@ -34,27 +34,17 @@ $(document).ready(function(){
 	$("#bt4").click(function(){
 		setPriceTotal();
 		var value = $("input:radio[name=4]:checked").val();
-		if (value == '1'){
-			$(".block-4").hide();
-			$(".block-5").show();
-		}else if(value == '2'){
-			$(".block-4").hide();
-			$(".block-5").show();
-		}else{
-			$(".block-4").hide();
-			$("#pasoImgBase").attr('src',"../images/paso_cupcakes_6_block5.png");
-			$(".block-6").show();
-			return;
-		}	
+		$(".block-4").hide();
+		$(".block-5").show();
 		mostrarPaso5();
 	});
   
-	$("#bt5").click(function(){
+	/*$("#bt5").click(function(){
 		$(".block-5").hide();
 		$(".block-6").show();
 		setPriceTotal();
 		mostrarPaso6();
-	});
+	});*/
 	
 	/*-----------------------------------*/
 	
@@ -67,15 +57,14 @@ $(document).ready(function(){
 		$("#bt1").show();
 		var j = $(this).val();
 		getPrice(1,j);
-
-	});
+   	});
 
 	/* Click en cualquier radio button del paso 2*/
 	$(".rdB2").click(function(){
 		value = $(this).val();
 		/* Retornar a cero el valor de la cantidad en el select*/
-		if (value != 1){
-			$("#cantCupcakes").val('1');
+		if (value != 2){
+			$("#cantCupcakes").val('20');
 			$("#bt2Disable").show();
 			$("#bt2").hide();
 			$("#calcomania").show();
@@ -116,11 +105,8 @@ $(document).ready(function(){
 	
 	/* Click en cualquier radio button del paso 4*/
 	$(".rdB4").click(function(){
-		$("#bt4Disable").hide();
-		$("#bt4").show();
-		value = $(this).val();
+        value = $(this).val();
 		getPrice(4,value);
-		
 	});
 	
 	
@@ -134,13 +120,13 @@ $(document).ready(function(){
 	
 	
 	/* Click en cualquier radio button del paso 6*/  
-	$(".rdB6").click(function(){
+	/*$(".rdB6").click(function(){
 		$("#bt6Disable").hide();
 		$("#bt6").show();
 		value = $(this).val();
 		getPrice(6,value);
 		//mostrarImgDecoracion(this);
-	});
+	});*/
   
 	/* -----------------------------------*/
 	
@@ -235,13 +221,6 @@ $(document).ready(function(){
 	
 	function mostrarPaso2(){
 		$("#pasoImgBase").attr('src',"./images/paso_cupcakes_2.png");
-		val = $('#cantCupcakes').val();
-		priceTemp = (Number(val) * Number(priceCant));
-		var priceAux = priceTotal;
-		priceAux = priceAux + priceTemp;
-		var priceText = priceAux + '.00';
-		$('.price').text(priceText);
-		priceTotalAux = priceAux;
 	}
 	
 	function mostrarPaso3(){
@@ -375,13 +354,12 @@ $(document).ready(function(){
 		var selectIdAux = '.price-int' + i+j;
 		var price = $(selectIdAux).text();
 		priceCapas = cantCapas*(Number(price));
-		
 		priceAux =  priceAux + Number(priceCapas);
 		var priceText = priceAux + '.00';
 		$('.price').text(priceText);
 		priceTotalAux = priceAux;
-		if (i == 2) priceCant = price;
-	}
+		if (i == 1) priceCant = price;
+   	}
 	
 	function setPriceTotal(){
 		priceTotal = priceTotalAux;
@@ -389,16 +367,15 @@ $(document).ready(function(){
 	}
 	
 	$('#cantCupcakes').change(function() {
-	    val = $('#cantCupcakes').val();
-		priceTemp = (Number(val) * Number(priceCant));
+	    val = $('#cantCupcakes').val()/20;
+        priceTemp = (Number(val) * Number(priceCant));
 		var priceAux = priceTotal;
-		priceAux = priceAux + priceTemp;
+		//alert(priceAux);
+        priceAux = priceTemp;
 		var priceText = priceAux + '.00';
 		$('.price').text(priceText);
 		priceTotalAux = priceAux;
 		cantCapas = val;
-		$(".rdB2").click();
-		
 	});
 	
 	/* Funcion que setea el valor del precio antes de hacer submit al formulario */
@@ -533,12 +510,16 @@ function mostrarImgCubierta(imagen, id){
 		//var value = $(element).val();
 		cubiertaEscogida = id;
 		var cubierta = "";
-		$("#pasoImgBase").attr('src',"./images/paso_cupcakes_4.png");
+      	
+        $("#pasoImgBase").attr('src',"./images/paso_cupcakes_4.png");
 		cubierta = "./images/cupcakes/" + imagen;
 		
-		if (id == "58"|| id == "59" || id == "81" || id == "82")
+		if (id == "58"|| id == "59" || id == "81" || id == "82"){
 			$("#pasoImgBase").attr('src',"./images/paso_cupcakes_4_block5.png");
-		
+             $("#bt4Disable").hide();
+             $("#bt4").hide();
+             $("#bt4-esp").show();
+        }
 		if (id == "60"){
 			unaCubierta = false;
 			$("#pasoImgBase").attr('src',"./images/paso_cupcakes_4_block5.png");
@@ -598,6 +579,13 @@ function mostrarImgCubierta(imagen, id){
 			
 			$("#pasoImgCubierta").hide();
 		}
+        
+        if (id != "58" && id != "59" && id != "81" && id != "82"){
+            $("#bt4Disable").hide();
+		    $("#bt4").show();
+            $("#bt4-esp").hide();
+        }
+       
 	}
 	
 	function mostrarImgColor(imagen, id, element){

@@ -8,25 +8,18 @@
 <%@ page import="domain.Client "%> 
 <!DOCTYPE html>
 <html>
-<head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-	
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
 	<title>Design Your Cake</title>
-	<link href='http://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Economica' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'/>
+	<link href='http://fonts.googleapis.com/css?family=Economica' rel='stylesheet' type='text/css'/>
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
-	<link rel="shortcut icon" href="images/ico.ico">
-	
+	<link rel="shortcut icon" href="images/ico.ico"/>
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
 	<script type="text/javascript" src="js/cupcakes.js"></script>
-	<script type="text/javascript" charset="utf-8">
-		function inhabilitar(){ 
-		   	return false;
-		} 
-		document.oncontextmenu=inhabilitar;
-	</script>
 </head>
-<body oncontextmenu="">
+<body>
 <%
 	HttpSession infoPage = request.getSession();
 	session.setAttribute("prevPage", "CupcakesServlet?typeId=2");
@@ -195,7 +188,7 @@
 									}
 								%>
 										<div class="<%= div %>">
-											<input  class="rdB<%= i %>"  type="<%= type %>" name="<%= i %>" value="<%= j %>" > <span id="name<%= i+ "" +j%>">  <%= step.getName()%></span>
+											<input  class="rdB<%= i %>"  type="<%= type %>" name="<%= i %>" value="<%= j+1 %>" > <span id="name<%= i+ "" +j%>">  <%= step.getName()%></span>
 											<span style="display:none;" class="price-int<%= i %><%= j %>"> <%= step.getPrice() %></span>
 											<% if (regalo){  %>
 											<div id="calcomania" style="display:none;">
@@ -285,11 +278,13 @@
 								%>
 							
 						</div>
-						<% if (i != 6){%>
+						<% if (i != 5){%>
 							<span style="display: inline;" class="buttons">
 									<input  type="button" name="sbmtButtonPrev" class="buttonR" value="Começar de novo"  />
 									<input  type="button" name="sbmtButton" class="buttonDisable" value="Próxima" id="bt<%= i %>Disable"  />
 									<input  type="button" name="sbmtButton" class="button" value="Próxima"  style="display: none;" id="bt<%= i %>" />
+                                    <input  type="submit" name="sbmtButton" class="button" value="Ordenação"  style="display: none;" id="bt<%= i %>-esp" />
+                                    
 							</span>		
 						<% }else{%>
 							<span style="display: inline;" class="buttons">
