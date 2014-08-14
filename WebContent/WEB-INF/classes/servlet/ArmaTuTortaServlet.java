@@ -99,7 +99,8 @@ public class ArmaTuTortaServlet extends HttpServlet {
 				rd.forward(request, response);
 			}else{
 				Properties propertiesFile = new Properties();
-				propertiesFile.load( new FileInputStream( getServletContext().getInitParameter("properties") ) );
+				//propertiesFile.load( new FileInputStream( getServletContext().getInitParameter("properties") ) );
+				propertiesFile.load( new FileInputStream("/home/spookie/jvm/apache-tomcat-7.0.27/domains/designyourcakes.com/ROOT/conf/armatutorta.properties"));
 				OrderCake orderCake = new OrderCake();
 				String error = "";
 				if  (type.equals("1")){
