@@ -123,23 +123,22 @@
 			        	 %>
 						<strong>Producto pedido:</strong> Cupcakes. <br>
 			    		<strong>Tama&ntilde;o:</strong> <%= pedido.getTamano() %>.<br>
-			    		<% if (pedido.getCantidad().contains("docena en caja")){ %>
+			    		<% if (pedido.getCantidad() != null && pedido.getCantidad().contains("docena en caja")){ %>
 			     			<strong>Cantidad:</strong>  1 Docena en caja para regalar.<br>
 			     			<strong>Texto de la Calmon&iacute;a:</strong>  <%= pedido.getCalcomania() %>.<br>
 			     		<% }else{%>
-			     			<strong>Cantidad:</strong>  <%= pedido.getCantidadDocenas() %> Docenas.<br>
+			     			<strong>Cantidad:</strong>  <%= pedido.getCantidadDocenas() %> Unidades.<br>
 			     		<% }%>
 			    		<strong>Sabor(es) de los cupcakes:</strong> <%= pedido.getSabor() %>.<br>
 			     		<strong>Cubierta(s):</strong>  <%= pedido.getCubiertas() %>.<br>
 			     		<% if (!colores.equals("")) { %>
 			     		<strong>Color(es):</strong>  <%= colores %><br>
 			     		<% } %>
-			     		<strong>Decoraci&oacute;n:</strong><%= pedido.getDecoracion() %>.<br>
-					</div>
+			    	</div>
 					<div class="total"> Total: <%= pedido.getPrecio() %>.<br></div><br>
 			   </div>
 			   <div class="dt-buttonInline">
-					<input type="button" name="sbmtButton" class="buttonInline" value="Cancelar" onclick="location.href='http://www.designyourcakes.com/CupcakesServlet?typeId=2';"  />
+					<input type="button" name="sbmtButton" class="buttonR" value="Cancelar" onclick="location.href='http://www.designyourcakes.com/CupcakesServlet?typeId=2';"  />
 					<input type="submit" name="sbmtButton" class="buttonInline" value="Ordenar"  />
 				</div> 
 			</form>
