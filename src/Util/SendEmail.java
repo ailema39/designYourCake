@@ -127,7 +127,7 @@ public class SendEmail  extends Thread  {
 	          
         	addressTo[0] = new InternetAddress(to);
         	mimemessage.setRecipients(Message.RecipientType.TO, addressTo);
-        	mimemessage.setSubject( "Recuperação de Senha", "ISO-8859-1" );
+        	mimemessage.setSubject( "Recupera&#231;&#227;o de Senha", "ISO-8859-1" );
 	          
         	String messa = "Oi " + name + ",<br>" +
 		    	"Abaixo est&#225; a informa&#231;&#227;o para acessar sua conta: <br><br>"
@@ -191,7 +191,7 @@ public class SendEmail  extends Thread  {
 	          
 	          addressTo[0] = new InternetAddress(to);
 	          mimemessage.setRecipients(Message.RecipientType.TO, addressTo);
-	          mimemessage.setSubject( "Recuperação de Senha", "ISO-8859-1" );
+	          mimemessage.setSubject( "Recupera&#231;&#227;o de Senha", "ISO-8859-1" );
 	          
 	          String messa = "Oi " + name + ",<br>" +
 		 		 "Abaixo est&#225; a informa&#231;&#227;o para acessar sua conta: <br><br>"
@@ -256,7 +256,7 @@ public class SendEmail  extends Thread  {
 	          
         	addressTo[0] = new InternetAddress(to);
         	mimemessage.setRecipients(Message.RecipientType.TO, addressTo);
-        	mimemessage.setSubject("Você tem uma nova mensagem ou comentário", "ISO-8859-1");
+        	mimemessage.setSubject("Voc&#234; tem uma nova mensagem ou coment&#225;rio", "ISO-8859-1");
 	          
         	String messa = "Ol&#225;, voc&#234; recebeu um novo coment&#225;rio atrav&#233;s do site Design Your Cake.<br><br>" +
 	          	"Abaixo est&#227;o os dados da pessoa que escreveu e mensagem: <br><br>"
@@ -397,7 +397,7 @@ public class SendEmail  extends Thread  {
 	          
         	addressTo[0] = new InternetAddress(to);
         	mimemessage.setRecipients(Message.RecipientType.TO, addressTo);
-        	mimemessage.setSubject("Tienes un nuevo pedido de tortas. Orden N°" + numPedido, "ISO-8859-1");
+        	mimemessage.setSubject("Tem um novo pedido de Bolos. Pedido N°" + numPedido, "ISO-8859-1");
         	
         	String rell = "";
         	
@@ -411,32 +411,32 @@ public class SendEmail  extends Thread  {
         	}
 	          
         	// Send the actual HTML message, as big as you like
-        	String messa = "Has recibido un nuevo pedido. <br><br>" +
-	    		"<strong> Datos del pedido.</strong><br><br>" +
-	    		" Producto pedido: Torta<br>" +
+        	String messa = "Voc&#234; recebeu uma nova encomenda.  <br><br>" +
+	    		"<strong> Dados para encomenda. </strong><br><br>" +
+	    		" Produto encomendado: Bolo <br>" +
 	    		" Forma: " + datos[0] + "<br>" +
-	     		" Tama&ntilde;o: " + datos[1]  + "<br>" +
-	     		" Sabor del ponqu&eacute;: " + datos[2]  + "<br>" +
-	     		" Cantidad de capas: " + datos[3]  + "<br>" ;
+	     		" Tamanho: " + datos[1]  + "<br>" +
+	     		" Sabor Massa: " + datos[2]  + "<br>" +
+	     		" Número de camadas:  " + datos[3]  + "<br>" ;
          	if (relleno != null)
-         		messa += " Sabores de capas: " + rell + "<br>" ;
+         		messa += " Sabores de camadas:  " + rell + "<br>" ;
          	
-         	messa += " Sabores de cubierta: " + datos[4] + ".<br><br>" +
-	     		" Precio: Bs." + datos[5] + ".<br><br>" +
-	     		" Fecha de Entrega: " + datos[7] + ".<br><br>" +	     		
-	     		" <strong>Datos del comprador:</strong> <br><br> " +
-	     		" Nombre: " + client.getFirstName() + " "  + client.getLastName() +  "<br>" +
-	     		" Correo Electr&oacute;nico: " + client.getEmail() + "<br>" +
-	     		" Tel&eacute;fono: " + client.getPhone() + "<br>";
+         	messa += " Sabores da cobertura:  " + datos[4] + ".<br><br>" +
+	     		" Pre&#231;o: R$. " + datos[5] + ".<br><br>" +
+	     		" Data de entrega:  " + datos[7] + ".<br><br>" +	     		
+	     		" <strong>Detalhes do Comprador: </strong> <br><br> " +
+	     		" Nome: " + client.getFirstName() + " "  + client.getLastName() +  "<br>" +
+	     		" Email: " + client.getEmail() + "<br>" +
+	     		" Telefone: " + client.getPhone() + "<br>";
          	if (client.getOtherPhone() != null && !client.getOtherPhone().equals(""))
-         		messa += "Otro Tel&eacute;fono: " + client.getOtherPhone() + "<br>";
+         		messa += "Outro telefone: " + client.getOtherPhone() + "<br>";
          	if (client.isShippingAddress() == 1)
-         		messa += "Dirección de Envío: " + client.getAddress() + ".<br><br>";
+         		messa += "Endere&#231;o para entrega: " + client.getAddress() + ".<br><br>";
          	else
-         		messa += "Dirección de Envío: " + client.getShippingAddress() + ".<br><br>";
+         		messa += "Endere&#231;o para entrega: " + client.getShippingAddress() + ".<br><br>";
 	         	
          	if (attach)
-         		messa += "Adjunto encontrar&aacute;s la imagen que el usuario quiere usar para la cubierta de la torta.";
+         		messa += "Em anexo voc&#234; encontrar&#225; a imagem que o usu&#225;rio deseja usar para cobrir o bolo.";
          	
          	MimeBodyPart mbp1 = new MimeBodyPart();         	
          	mbp1.setText(messa);
@@ -511,30 +511,30 @@ public class SendEmail  extends Thread  {
 	          
         	addressTo[0] = new InternetAddress(to);
         	mimemessage.setRecipients(Message.RecipientType.TO, addressTo);
-        	mimemessage.setSubject("Tienes una nueva solicitud de presupuesto: No." + numPedido, "ISO-8859-1");
+        	mimemessage.setSubject("Voc&#234; tem uma nova solicita&#231;&#227;o de or&#231;amento (Ocasi&#245;es Especiais): N&#176;." + numPedido, "ISO-8859-1");
         	
         	// Send the actual HTML message, as big as you like
-        	String messa = "Has recibido una nueva solicitud de presupuesto. <br><br>" +
-	    		"<strong> Datos de la solicitud.</strong><br><br>" +
-	    		" Productos pedidos: " + productos + "<br>" +
-	    		" Ocasi&oacute;n: " + datos[0] + "<br>" +
-	     		" N&uacute;mero aproximado de invitados: " + datos[1]  + "<br>" +
-	     		" Informaci&oacute;n sobre la idea del usuario: " + datos[2]  + "<br><br>"+	     		
-	     		" <strong>Datos del comprador:</strong> <br><br> " +
-	     		" Nombre: " + client.getFirstName() + " " + client.getLastName() +  "<br>" +
-	     		" Correo Electr&oacute;nico: " + client.getEmail() + "<br>" +
-	     		" Tel&eacute;fono: " + client.getPhone() + ".<br><br>"; 
+        	String messa = "Voc&#234; recebeu uma nova solicita&#231;&#227;o de or&#231;amento. <br><br>" +
+	    		"<strong>Dados para encomenda.</strong><br><br>" +
+	    		" Produto encomendado: " + productos + "<br>" +
+	    		" Ocasi&#227;o especial: " + datos[0] + "<br>" +
+	     		" N&#250;mero aproximado de convidados: " + datos[1]  + "<br>" +
+	     		" Informações sobre a idéia do usuário: " + datos[2]  + "<br><br>"+	     		
+	     		" <strong>Detalhes do Comprador:</strong> <br><br> " +
+	     		" Nome: " + client.getFirstName() + " " + client.getLastName() +  "<br>" +
+	     		" Email: " + client.getEmail() + "<br>" +
+	     		" Telefone: " + client.getPhone() + ".<br><br>"; 
         	
         	if (!client.getOtherPhone().equals(""))
-        		messa += "Otro Tel&eacute;fono: " + client.getOtherPhone() + "<br>";
+        		messa += "Outro telefone: " + client.getOtherPhone() + "<br>";
         	
            	if (client.isShippingAddress() == 1)
-           		messa += "Dirección de Envío: " + client.getAddress() + ".<br><br>";
+           		messa += "Endere&#231;o para entrega: " + client.getAddress() + ".<br><br>";
            	else
-           		messa += "Dirección de Envío: " + client.getShippingAddress() + ".<br><br>";
+           		messa += "Endere&#231;o para entrega: " + client.getShippingAddress() + ".<br><br>";
 	         	
            	if (attach)
-           		messa += "Anexo encontrar&aacute;s la imagen de referencia que mand&oacute; el usuario.";
+           		messa += "Anexo encontrar a imagem de refer&#234;ncia que o usu&#225;rio enviou.";
 	         
            	MimeBodyPart mbp1 = new MimeBodyPart();
            	mbp1.setText(messa);
@@ -558,7 +558,6 @@ public class SendEmail  extends Thread  {
         	transport.connect(server, from, password); 
         	transport.sendMessage(mimemessage, mimemessage.getAllRecipients()); 
         	transport.close();
-        	System.out.println("Correo enviado. Enjoy!!!");
 	          
         } catch (MessagingException ex) {
         	ex.printStackTrace();
@@ -609,7 +608,7 @@ public class SendEmail  extends Thread  {
 	          
         	addressTo[0] = new InternetAddress(to);
         	mimemessage.setRecipients(Message.RecipientType.TO, addressTo);
-        	mimemessage.setSubject("Tienes un nuevo pedido de cupcakes. Orden N°" + numPedido, "ISO-8859-1");
+        	mimemessage.setSubject("Tem um novo pedido de Cupcakes N°" + numPedido, "ISO-8859-1");
         	
         	String rell = "";
 
@@ -623,38 +622,38 @@ public class SendEmail  extends Thread  {
         	}
 	         
         	// Send the actual HTML message, as big as you like
-        	String messa = "Has recibido un nuevo pedido. <br><br>" +
-	    		"<strong> Datos del pedido.</strong><br><br>" +
-	    		" Producto pedido: Cupcakes<br>" +
-	    		" Tama&ntilde;o: " + datos[0] + "<br>";
+        	String messa = "Voc&#234; recebeu uma nova encomenda. <br><br>" +
+	    		"<strong> Dados para encomenda.</strong><br><br>" +
+	    		" Produto encomendado:  Cupcakes<br>" +
+	    		" Tamanho: " + datos[0] + "<br>";
 	         	
         	if (!datos[1].contains("regalar"))
-        		messa += " Cantidad: " + datos[6] + " Docenas"  + "<br>";
+        		messa += " Quantidade: " + datos[6] + " Docenas"  + "<br>";
         	else{
-        		messa += " Cantidad: " + datos[1]  + "<br>";
+        		messa += " Quantidade: " + datos[1]  + " Unidades<br>";
         		messa += " Texto de la Calcoman&iacute;a: " + datos[5] + "<br>";
         	}
 	     		
-        	messa += " Sabor de los cupcakes: " + datos[2]  + "<br>" +
-	     		" Cubierta: " + datos[3]  + "<br>" +
-	     		" Decoraci&oacute;n: " + datos[4] + "<br>";
+        	messa += " Sabor dos cupcakes: " + datos[2]  + "<br>" +
+	     		" Cobertura: " + datos[3]  + "<br>" +
+	     		" Decora&#231;&#227;o: " + datos[4] + "<br>";
         	
         	if (color!= null)
-        		messa += " Color(es): " + rell + "<br>";
-	     		messa += " Precio: Bs." + datos[7] + ".<br><br>" +
-	     		" Fecha de Entrega: " + datos[8] + ".<br><br>" +	     		
-	     		" <strong>Datos del comprador:</strong> <br><br> " +
-	     		" Nombre: " + client.getFirstName() + " "  + client.getLastName() +  "<br>" +
-	     		" Correo Electr&oacute;nico: " + client.getEmail() + "<br>" +
-	     		" Tel&eacute;fono: " + client.getPhone() + "<br>";
+        		messa += " Cor (es): " + rell + "<br>";
+	     		messa += " Pre&#231;o: R$. " + datos[7] + ".<br><br>" +
+	     		" Data de entrega: " + datos[8] + ".<br><br>" +	     		
+	     		" <strong>Detalhes do Comprador:</strong> <br><br> " +
+	     		" Nome: " + client.getFirstName() + " "  + client.getLastName() +  "<br>" +
+	     		" Email: " + client.getEmail() + "<br>" +
+	     		" Telefone: " + client.getPhone() + "<br>";
 
 	     	if (client.getOtherPhone() != null && !client.getOtherPhone().equals(""))
-	     		messa += "Otro Tel&eacute;fono: " + client.getOtherPhone() + "<br>";
+	     		messa += "Outro telefone: " + client.getOtherPhone() + "<br>";
 	        	
 	     	if (client.isShippingAddress() == 1)
-	     		messa += "Dirección de Envío: " + client.getAddress() + ".<br><br>";
+	     		messa += "Endere&#231;o para entrega: " + client.getAddress() + ".<br><br>";
 	     	else
-	     		messa += "Dirección de Envío: " + client.getShippingAddress() + ".<br><br>";
+	     		messa += "Endere&#231;o para entrega: " + client.getShippingAddress() + ".<br><br>";
 	         	
 	     	MimeBodyPart mbp1 = new MimeBodyPart();
 	     	mbp1.setText(messa);
@@ -678,8 +677,6 @@ public class SendEmail  extends Thread  {
         	transport.connect(server, from, password); 
         	transport.sendMessage(mimemessage, mimemessage.getAllRecipients()); 
         	transport.close();
-        	System.out.println("Correo enviado. Enjoy!!!");
-	          
         } catch (MessagingException ex) {
         	ex.printStackTrace();
         } catch (UnsupportedEncodingException e) {
@@ -697,7 +694,7 @@ public class SendEmail  extends Thread  {
 	 * @param productos
 	 * @param client
 	 */
-	public static void sendEmailOrderDulcesTortas(Properties propertiesFile, String numPedido, boolean attach, String pref,
+	/*public static void sendEmailOrderDulcesTortas(Properties propertiesFile, String numPedido, boolean attach, String pref,
 			String[] datos, String[] productos, Client client) {
 		
 		String to = propertiesFile.getProperty(pref + "EmailOrdersCopy");
@@ -729,12 +726,12 @@ public class SendEmail  extends Thread  {
 	          
         	addressTo[0] = new InternetAddress(to);
         	mimemessage.setRecipients(Message.RecipientType.TO, addressTo);
-        	mimemessage.setSubject("Tienes una nueva compra de dulces tortas: No." + numPedido, "ISO-8859-1");
+        	mimemessage.setSubject("Tem uma nova compra de doces: N°" + numPedido, "ISO-8859-1");
         	
         	// Send the actual HTML message, as big as you like
-        	String messa = "Has recibido una nueva compra de dulces tortas. <br><br>" +
-        		"<strong> Datos de la orden:</strong><br><br>" +
-        		" Productos pedidos: <br>";
+        	String messa = "Voc&#234; recebeu uma nova compra de bolos doces. <br><br>" +
+        		"<strong>Dados Order:</strong><br><br>" +
+        		" Produtos encomendado: <br>";
 	         
          	for (int j = 0; j < productos.length; j++){
          		messa += "* " + productos[j] + "<br>";
@@ -777,5 +774,5 @@ public class SendEmail  extends Thread  {
         } catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
         }  		  
-	}
+	}*/
 }

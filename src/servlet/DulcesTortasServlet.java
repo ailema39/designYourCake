@@ -74,7 +74,7 @@ public class DulcesTortasServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String[] productos = request.getParameterValues("dulcesTortas");
+		/*String[] productos = request.getParameterValues("dulcesTortas");
 		if (productos == null)
 			doGet(request,response);
 		else{
@@ -110,11 +110,11 @@ public class DulcesTortasServlet extends HttpServlet {
 				//propertiesFile.load( new FileInputStream("/home/armatuto/public_html/conf/armatutorta.properties"));
 				propertiesFile.load( new FileInputStream("/home/spookie/jvm/apache-tomcat-7.0.27/domains/designyourcakes.com/ROOT/conf/armatutorta.properties"));
 				/* Establezco los valores de las cosas pedidas */
-				List<OrderItem> orderItems = new LinkedList<OrderItem>();
+				//List<OrderItem> orderItems = new LinkedList<OrderItem>();
 				
-				OrderItem item = new OrderItem();
+				//OrderItem item = new OrderItem();
 				/* Tortas pedidas */
-				for (int i = 0; i < productos.length; i++){
+				/*for (int i = 0; i < productos.length; i++){
 					item = new OrderItem();
 					String productName = hashMap.get(productos[i]);
 					item.setPrice(hashMapPrice.get(productName));
@@ -159,6 +159,6 @@ public class DulcesTortasServlet extends HttpServlet {
 				}
 				
 			}
-		}
+		}*/
 	}
 }

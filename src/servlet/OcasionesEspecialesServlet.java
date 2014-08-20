@@ -72,9 +72,9 @@ public class OcasionesEspecialesServlet extends HttpServlet {
 			
 			try{			
 				String name = multipart.getParameter("txtName");
-				String torta = multipart.getParameter("eventoT");
-				String cupcakes = multipart.getParameter("eventoC");
-				String gelatina = multipart.getParameter("eventoG");
+				String bolos = multipart.getParameter("eventoT");
+				String mesaDoces = multipart.getParameter("eventoC");
+				//String gelatina = multipart.getParameter("eventoG");
 				String invitados = multipart.getParameter("txtInv");
 				String idea = multipart.getParameter("idea");
 				String fecha = multipart.getParameter("txtFecha");
@@ -121,27 +121,26 @@ public class OcasionesEspecialesServlet extends HttpServlet {
 				
 				
 				String products = "";
-				if (torta != null)
-					products = "Torta" ;
-				if (gelatina != null){
+				if (bolos != null)
+					products = "Bolo" ;
+				if (mesaDoces != null){
 					if (!products.equals(""))
-						products += ", Gelatina" ;
+						products += ", Mesa de doces" ;
 					else
-						products += "Gelatina" ;
+						products += "Mesa de doces" ;
 				}
-				if (cupcakes != null){
+				/*if (cupcakes != null){
 					if (!products.equals(""))
 						products += ", Cupcakes" ;
 					else
 						products += "Cucpcakes" ;
-				}
+				}*/
 				final String productos = products;
 				estimation.setProducts(products);
 				
 				
 				/* Guardo en bd la ocasion */
 				final Long rowsUpdated  = (Long) CommandExecutor.getInstance().executeDatabaseCommand(new command.CreateOrderSpecial(estimation));	
-				System.out.println("aqui45");
 				final boolean attachment = attach;
 	
 				/* Obtengo todos datos del cliente para ser enviados por correo*/
