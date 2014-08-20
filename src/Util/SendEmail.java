@@ -397,7 +397,7 @@ public class SendEmail  extends Thread  {
 	          
         	addressTo[0] = new InternetAddress(to);
         	mimemessage.setRecipients(Message.RecipientType.TO, addressTo);
-        	mimemessage.setSubject("Tem um novo pedido de Bolos. Pedido N°" + numPedido, "ISO-8859-1");
+        	mimemessage.setSubject("Você tem um novo pedido de Bolos. Pedido N°" + numPedido, "ISO-8859-1");
         	
         	String rell = "";
         	
@@ -511,7 +511,7 @@ public class SendEmail  extends Thread  {
 	          
         	addressTo[0] = new InternetAddress(to);
         	mimemessage.setRecipients(Message.RecipientType.TO, addressTo);
-        	mimemessage.setSubject("Voc&#234; tem uma nova solicita&#231;&#227;o de or&#231;amento (Ocasi&#245;es Especiais): N&#176;." + numPedido, "ISO-8859-1");
+        	mimemessage.setSubject("Você tem uma nova solicitação de orçamento (Ocasiões Especiais): N°" + numPedido, "ISO-8859-1");
         	
         	// Send the actual HTML message, as big as you like
         	String messa = "Voc&#234; recebeu uma nova solicita&#231;&#227;o de or&#231;amento. <br><br>" +
@@ -608,7 +608,7 @@ public class SendEmail  extends Thread  {
 	          
         	addressTo[0] = new InternetAddress(to);
         	mimemessage.setRecipients(Message.RecipientType.TO, addressTo);
-        	mimemessage.setSubject("Tem um novo pedido de Cupcakes N°" + numPedido, "ISO-8859-1");
+        	mimemessage.setSubject("Você tem um novo pedido de Cupcakes N°" + numPedido, "ISO-8859-1");
         	
         	String rell = "";
 

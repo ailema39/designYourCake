@@ -55,7 +55,7 @@
 		<form id="formDulcesTortas" action="ContactServlet" method="get" id="confirm">
 		<input type="hidden" id="priceDulcCake" name="priceDulcCake" value = "0">
     	<%
-    		String[] archivos = FilesName.getFilesNamesIndex(request);
+    		String[] archivos = FilesName.getFilesNamesIndex(request, FilesName.DULCES_TORTAS);
         %>	
 		<div class="home">
 			<div class="aside">
@@ -110,7 +110,7 @@
     				<div id="jqb_object">
     					<div class="jqb_slides">
     						<% for (int i = 0 ; i < archivos.length; i++){
-    							String src = "./images/galeria_inicio/" + archivos[i];
+    							String src = "./images/galeria_dulces/" + archivos[i];
     						%>
     							<div class="jqb_slide" title="slide title" ><a href="GalleryServlet"><img src="<%= src %>"  height="220" width="340"/></a></div>
     						<% } %>

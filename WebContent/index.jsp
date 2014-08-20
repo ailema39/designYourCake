@@ -50,7 +50,7 @@
 		</div>
 	</div>
 	<%
-		String[] archivos = FilesName.getFilesNamesIndex(request);;	
+		String[] archivos = FilesName.getFilesNamesIndex(request, FilesName.INICIO);	
     %>	
 	<div id="content">
         <div class="back"></div>

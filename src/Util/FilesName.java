@@ -8,10 +8,19 @@ import javax.servlet.http.HttpServletRequest;
 
 public class FilesName  {
 	
-	public static String[] getFilesNamesIndex(HttpServletRequest request) {
+	public static String INICIO = "inicio";
+	public static String DULCES_TORTAS = "dulces";
+	
+	public static String[] getFilesNamesIndex(HttpServletRequest request, String section) {
 		
 		String[] filesName = null;
-		String path = "/home/spookie/jvm/apache-tomcat-7.0.27/domains/designyourcakes.com/ROOT/images/galeria_inicio";
+		String path = "";
+		
+		if(section.equalsIgnoreCase(INICIO)){
+			path = "/home/spookie/jvm/apache-tomcat-7.0.27/domains/designyourcakes.com/ROOT/images/galeria_inicio";
+		} else if(section.equalsIgnoreCase(DULCES_TORTAS)){
+			path = "/home/spookie/jvm/apache-tomcat-7.0.27/domains/designyourcakes.com/ROOT/images/galeria_dulces";
+		}
 		//String path = "C:\\Program Files (x86)\\Apache Software Foundation\\Tomcat 7.0\\webapps\\armaTuTorta\\images\\galeria_inicio";
 		//String path = "C:\\Program Files\\apache-tomcat-7.0.12\\webapps\\armaTuTorta\\images\\galeria_inicio";
 		File folder = new File(path);
