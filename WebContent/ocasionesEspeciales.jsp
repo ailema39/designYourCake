@@ -71,7 +71,6 @@
 						<label for="name" style="height:60px;">Quais os produtos que gostaria de pedir?:</label>
 						<input type="checkbox" name="eventoT" id="eventoT" value="1"/>Bolo<br/>
 						<input type="checkbox" name="eventoC" id="eventoC" value="2"/>Mesa de doces<br/>
-						<input type="checkbox" name="eventoG" id="eventoG" value="3"/>Bolo com mesa de doces
 						<span class="error" id="errorProducto">Por favor, selecione pelo menos um produto.</span><br/><br/>
 						<label for="name">¿Já tem um desenho que você gosta? Anexá-lo aquí::</label>
 						<input type="file" name="txtImage" id="txtImage" maxlength="50" lang="es" /> <br/><br/><br/>

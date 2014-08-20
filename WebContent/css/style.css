@@ -42,11 +42,26 @@ p a {
 }
 
 .pestana{
-	background: url(../images/pestana.png) no-repeat;
+	/*background: url(../images/pestana.png) no-repeat; */
 	height: 50px;
 	width:150px;
 	padding-top: 15px;
 	text-align: center;
+    background: #fcfcfc; /* Old browsers */
+    background: -moz-linear-gradient(top,  #fcfcfc 1%, #e5e6e6 26%, #cdd2d6 52%, #d1d6d9 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#fcfcfc), color-stop(26%,#e5e6e6), color-stop(52%,#cdd2d6), color-stop(100%,#d1d6d9)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #fcfcfc 1%,#e5e6e6 26%,#cdd2d6 52%,#d1d6d9 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #fcfcfc 1%,#e5e6e6 26%,#cdd2d6 52%,#d1d6d9 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #fcfcfc 1%,#e5e6e6 26%,#cdd2d6 52%,#d1d6d9 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #fcfcfc 1%,#e5e6e6 26%,#cdd2d6 52%,#d1d6d9 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#d1d6d9',GradientType=0 ); /* IE6-9 */
+    height: 30px;
+    -webkit-border-bottom-right-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -moz-border-radius-bottomright: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 .pest{
@@ -149,7 +164,7 @@ p a {
 }
 
 #header div div {
-	height: 110px;
+	height: 95px;
 	overflow: hidden;
 	position: relative;
 }
@@ -162,9 +177,10 @@ p a {
 
 #header div div div {
 	float: right;
-	height: 110px;
+	height: auto;
 	width: auto;
-	margin-top: -10px;
+	margin-top: 0px;
+	/* background: red; */
 }
 
 #header div div div div {
@@ -190,10 +206,11 @@ p a {
 	float: left;
 	line-height: 13px;
 	text-decoration: none;
-	margin-top: 15px;
+	/* margin-top: 15px; */
 	font-family: 'Economica', sans-serif;
 	font-size: 20px;
 	margin-left: 10px;
+	text-shadow: 1px 1px 0 #E4E4E4;
 }
 
 #header div div div div a.last {
@@ -225,12 +242,14 @@ p a {
 	float: left;
 	height: 50px;
 	line-height: 50px;
-	width: 137px;
+	width: 136px;
 	margin-top: 0px;
+    
+	border-right: 1px solid #E4E6E8;
 }
 
 #header div ul li a {
-	background: url(../images/sprite-buttons.png) no-repeat 0 -205px;
+	/*background: url(../images/sprite-buttons.png) no-repeat 0 -205px;*/
 	color: #5b5c5e;
 	display: block;
 	font-size: 19px;
@@ -238,15 +257,32 @@ p a {
 	text-decoration: none;
 	text-shadow: 1px 1px 0 #e8edf1;
 	text-transform: capitalize;
+    background: #fcfcfc; /* Old browsers */
+    background: -moz-linear-gradient(top,  #fcfcfc 1%, #e5e6e6 26%, #cdd2d6 52%, #d1d6d9 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#fcfcfc), color-stop(26%,#e5e6e6), color-stop(52%,#cdd2d6), color-stop(100%,#d1d6d9)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #fcfcfc 1%,#e5e6e6 26%,#cdd2d6 52%,#d1d6d9 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #fcfcfc 1%,#e5e6e6 26%,#cdd2d6 52%,#d1d6d9 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #fcfcfc 1%,#e5e6e6 26%,#cdd2d6 52%,#d1d6d9 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #fcfcfc 1%,#e5e6e6 26%,#cdd2d6 52%,#d1d6d9 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#d1d6d9',GradientType=0 ); /* IE6-9 */
+}
+
+
+
+#header div ul li:last-child{
+   border-right: none;
 }
 
 #header div ul li a:hover, #header ul li.current a {
 	color: #000;
-	text-shadow: 1px 1px 0 white;
+	text-shadow: 1px 1px 0 #E4E4E4;
 }
 
 #header div ul li.current a {
-	background: url(../images/sprite-buttons.png) no-repeat 0 -97px;
+	/* background: url(../images/sprite-buttons.png) no-repeat 0 -97px; */
+	background: #d6c3e5; /* Old browsers */  background: -moz-linear-gradient(top,  #d6c3e5 0%, #c0a2c2 100%); /* FF3.6+ */  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d6c3e5), color-stop(100%,#c0a2c2)); /* Chrome,Safari4+ */  background: -webkit-linear-gradient(top,  #d6c3e5 0%,#c0a2c2 100%); /* Chrome10+,Safari5.1+ */  background: -o-linear-gradient(top,  #d6c3e5 0%,#c0a2c2 100%); /* Opera 11.10+ */  background: -ms-linear-gradient(top,  #d6c3e5 0%,#c0a2c2 100%); /* IE10+ */  background: linear-gradient(to bottom,  #d6c3e5 0%,#c0a2c2 100%); /* W3C */  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6c3e5', endColorstr='#c0a2c2',GradientType=0 ); /* IE6-9 */;
+	background: #d6c3e5; /* Old browsers */  background: -moz-linear-gradient(top,  #d6c3e5 0%, #bf9ec1 100%); /* FF3.6+ */  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d6c3e5), color-stop(100%,#bf9ec1)); /* Chrome,Safari4+ */  background: -webkit-linear-gradient(top,  #d6c3e5 0%,#bf9ec1 100%); /* Chrome10+,Safari5.1+ */  background: -o-linear-gradient(top,  #d6c3e5 0%,#bf9ec1 100%); /* Opera 11.10+ */  background: -ms-linear-gradient(top,  #d6c3e5 0%,#bf9ec1 100%); /* IE10+ */  
+	background: linear-gradient(to bottom,  #d6c3e5 0%,#bf9ec1 100%); /* W3C */  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6c3e5', endColorstr='#bf9ec1',GradientType=0 ); /* IE6-9 */;
 }
 
 .bienv{
@@ -266,12 +302,14 @@ p a {
 #content {
     background: #E8E8E8;
     width: 959px;
-	margin: -90px auto;
+	
+    margin: -101px auto;
 	overflow: hidden;
 	padding: 0;
-	height: 460px;
+	min-height: 460px;
 	font-size: 20px;
     position: relative;
+    margin-bottom: 10px;
 }
 
 .back{
@@ -323,7 +361,7 @@ p a {
 	color: black;
 	margin-top: 10px;
 	margin-left: 40px;
-	width: 575px;
+	width: 480px;
 }
 
 #content .home .cakes input[type="checkbox"]{
@@ -588,8 +626,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e28ee5', end
 
 .dt-button{
 	position: absolute;
-    top: 365px;
-    left: 670px;
+    
+	top: 254px;
+    
+	left: 255px;
     text-align: center;
 }
 
@@ -1728,7 +1768,8 @@ a.readmore {
 	color: white;
 	background: #4d366a;
 	height: 2.5em;
-    z-index: -1;
+    
+	z-index: 0;
 }
 
 #footer div#navigation  {
@@ -1746,7 +1787,8 @@ img.dt-next{float: right; width: 40px; margin-top: -40px !important; cursor: poi
 
 
 #footer div#navigation div p {
-	font-size: 12px;
+	font-size: 10px;
+	font-family: Arial;
 }
 
 div.social {

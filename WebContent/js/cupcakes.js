@@ -4,7 +4,7 @@ $(document).ready(function(){
 	var priceTotal = 0;
 	var priceCant = 0;
 	var priceTotalAux = 0;
-	var cantCapas = 1;
+	var cantCapas = 2;
 	
 	
 
@@ -367,7 +367,7 @@ $(document).ready(function(){
 	}
 	
 	$('#cantCupcakes').change(function() {
-	    val = $('#cantCupcakes').val()/20;
+	    val = $('#cantCupcakes').val()/10;
         priceTemp = (Number(val) * Number(priceCant));
 		var priceAux = priceTotal;
 		//alert(priceAux);
@@ -434,9 +434,7 @@ $(document).ready(function(){
 			unaCubierta = true;
 			coloresSurtidos = false;
 			cubiertaEscogida = "";
-			cantCapas = 1;
-			
-			
+			cantCapas = 2;
 		});
 	
 	

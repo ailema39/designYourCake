@@ -56,11 +56,11 @@
         <div class="back"></div>
     		<div class="home">
     			<div class="aside">
-                    <p><span class="dyc">Design Your Cake</span> nascido em Caracas h&aacute; 4 anos com a id&eacute;ia de combiar os melhores sabores,
+                    <p><span class="dyc">Design Your Cake</span> nascido em Caracas, Venezuela h&aacute; 4 anos com a id&eacute;ia de combiar os melhores sabores,
                      com desenhos exclusivos e criados para cada pessoa. </p>
                     <p>Voc&#234; n&#227;o tem que se ajustar a um determinado tipo de bolo, voc&#234; pode criar o seu bolo favorito, com o sabor que voc&#234; 
                     gosta e todos os recheios que imagina! </p>
-                    <p>Cada um dos nossos sabores &eacute; feito com os melhores ingredientes para alcançar o melhor resultado, voc&#234; s&oacute; tem que imaginar,
+                    <p>Cada um dos nossos sabores &eacute; feito com os melhores ingredientes para alcan&#231;ar o melhor resultado, voc&#234; s&oacute; tem que imaginar,
                     n&oacute;s fazemos o resto. </p>
                     <p>Para n&oacute;s cada pessoa &eacute; &uacute;nica e, portanto, merecem um bolo &uacute;nico.</p>
                 </div>

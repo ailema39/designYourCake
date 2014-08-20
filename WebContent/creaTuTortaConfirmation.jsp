@@ -101,9 +101,9 @@
 				<input type="hidden" name="nombreImagen" id="nombreImagen" value="<%= pedido.getNombreImagen()==null ? "" : pedido.getNombreImagen() %>">
 
 				<div class="bienv">
-					<span class="bienv-title">Verifica los datos de tu pedido.</span><br><br>
-					Por favor ingrese la fecha de entrega para la cual desea su pedido: <input type="text" readonly="readonly" id="datepicker" name="txtFecha" />
-			  		<span class="error" id="errorDate">Disculpe, debe introducir una fecha de entrega válida</span><br><br>
+					<span class="bienv-title">Confira os detalhes do seu pedido.</span><br/><br/>
+					Por favor, indique a data de entrega para o qual voc&#234; deseja seu pedido: <input type="text" readonly="readonly" id="datepicker" name="txtFecha" /><br />
+			  		<span class="error" id="errorDate">Desculpe, voc&#234; precisa digitar uma data v&#225;lida da entrega</span><br/><br/>
 		
 					<div id="pedido">
 						<%
@@ -121,21 +121,21 @@
 						         }
 							}
 			        	 %>
-						<strong>Producto pedido:</strong> Torta. <br>
-			    		<strong>Forma:</strong>  <%= pedido.getForma() %>.<br>
-			    		<strong>Tama&ntilde;o:</strong> <%= pedido.getTamano() %>.<br>
-			     		<strong>Sabor del ponqu&eacute;:</strong> <%= pedido.getSabor() %>.<br>
-			     		<strong>Cantidad de capas:</strong>  <%= pedido.getCapas() %>.<br>
+						<strong>Produto encomendado:</strong> Bolo. <br/>
+			    		<strong>Forma:</strong>  <%= pedido.getForma() %>.<br/>
+			    		<strong>Tamanho:</strong> <%= pedido.getTamano() %>.<br/>
+			     		<strong>Sabor da massa:</strong> <%= pedido.getSabor() %>.<br/>
+			     		<strong>Número de camadas:</strong>  <%= pedido.getCapas() %>.<br/>
 			     		<% if (pedido.getRelleno() != null){ %>
-			     			<strong>Sabor(es) de capa(s):</strong>  <%= rell %>.<br>
+			     			<strong>Sabor(es) Camada(s):</strong>  <%= rell %>.<br/>
 			     		<% } %>
-			     		<strong>Sabor de la cubierta:</strong>   <%= pedido.getCubiertas() %>.<br>
+			     		<strong>Decora&#231;&#227;o:</strong>   <%= pedido.getCubiertas() %>.<br/>
 					</div>
-					<div class="total"> Total: <%= pedido.getPrecio() %><br></div><br>
+					<div class="total"> Total: <%= pedido.getPrecio() %><br/></div><br/>
      		   </div>
 			   <div class="dt-buttonInline">
 					<input type="button" name="sbmtButton" class="buttonInline" value="Cancelar" onclick="location.href='http://www.designyourcakes.com/ArmaTuTortaServlet?typeId=1';"  />
-					<input type="submit" name="sbmtButton" class="buttonInline" value="Ordenar"  />
+					<input type="submit" name="sbmtButton" class="buttonInline" value="Encomendar"  />
 				</div> 
 			</form>
 			</div>
@@ -146,29 +146,27 @@
 			%>
 			<div id="datosVerif" >
 				<div class="bienv">
-					<span class="bienv-title">&iexcl; Muchas gracias!.</span><br><br>
+					<span class="bienv-title"> Muchas gracias!.</span><br/><br/>
 						Hemos recibido su pedido, en los pr&oacute;ximos d&iacute;as lo
 						estaremos contactando para confirmar su compra y coordinar el env&iacute;o. 
-						<br><br>
+						<br/><br/>
 
-						Cualquier duda o inquietud lo invitamos a comunicarse con nosotros. <a href="ContactServlet"  class="readmore">Aqu&iacute;</a> 
-						podr&aacute; encontrar nuestros datos.
+						Qualquer d&#250;vida voc&#234; pode entrar em contato conosco. <a href="ContactServlet"  class="readmore">Aqui</a> voc&#234; pode encontrar os nossos dados. 
+						<br/><br/>
 
-						<br><br>
-
-						&iexcl;Hasta pronto!
+						Hasta pronto!
 
 			   </div>
 			</div>
 			 <% }else{ %>
 			   <div class="bienv">
-					<span class="bienv-title">&iexcl; Le pedimos mil disculpas!.</span><br><br>
+					<span class="bienv-title">Le pedimos mil disculpas!.</span><br/><br/>
 						Ha ocurrido un error al intentar procesar su solicitud. Lo invitamos a que intente m&aacute;s tarde. 
 						En caso de que el error persista puede comunicarse con nuestro equipo de soporte, bien sea
 						llam&aacute;ndonos directamente o mand&aacute;ndonos un correo. <a href="ContactServlet"  class="readmore">Aqu&iacute;</a> 
 						podr&aacute; encontrar nuestros datos.
 
-						<br><br>
+						<br/><br/>
 			   </div>
 			    <% } 
 				}

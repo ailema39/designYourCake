@@ -1,3 +1,4 @@
+<%@page import="Util.FilesName"%>
 <%@page import="java.util.HashMap"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ page import="domain.Client "%> 
@@ -12,7 +13,14 @@
 	<link rel="shortcut icon" href="images/ico.ico">
     <script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
+    <script src="js/jqbanner.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" media="screen" href="css/jqbanner.css" />
 	<script type="text/javascript" src="js/dulcesTortas.js"></script>
+	<script type="text/javascript" charset="utf-8">
+	$(document).ready(function() {
+		$("a[rel*=leanModal]").leanModal({ top : 200, overlay : 0.4, closeButton: ".modal_close" });
+	});
+	</script>
 </head>
 <body>
 <%
@@ -46,7 +54,9 @@
 	<div id="content">
 		<form id="formDulcesTortas" action="ContactServlet" method="get" id="confirm">
 		<input type="hidden" id="priceDulcCake" name="priceDulcCake" value = "0">
-	
+    	<%
+    		String[] archivos = FilesName.getFilesNamesIndex(request);
+        %>	
 		<div class="home">
 			<div class="aside">
 				<div class="title"> Desfrutar de nossos mais deliciosos doces!</div>
@@ -74,14 +84,14 @@
                         Con cobertura crocante ou cobertura de cream cheese.<br/><br/>
     					<div class="dt-title">Cheesecake de Oreo</div>
                         Uma mistura entre um cheesecake macio e biscoitos Oreo.
+                        <div class="dt-button">
+    						<input type="submit" name="sbmtButton" class="button" value="Pedir Or&#231;amento"  /><br />
+                            <span class="span-inq">Indique que voc&#234; quer e n&oacute;s enviaremos o seu or&#231;amento.</span>
+  					   </div> 
 					</div>
                     <img src="../images/1407908056_prev.png" class="dt-prev" style="display: none;"/>
                     <img src="../images/1407908056_next.png" class="dt-next"/>
-                    <div class="dt-button">
-						<input type="submit" name="sbmtButton" class="button" value="Pedir Or&#231;amento"  /><br />
-                        <span class="span-inq">Indique que voc&#234; quer e n&oacute;s enviaremos o seu or&#231;amento.</span>
-					</div> 
-				</div>	
+             	</div>	
 				<% }else{ %>
 					<br>
 					<div style="text-align: justify; margin-left: 30px;">
@@ -96,14 +106,22 @@
 				<% } %>
 			</div>	
 			
-			<div class="sectionDT">
-				<div>
-					<ul>
-						<li>
-							<img src="./images/imagen.png" alt="Image" />
-						</li>
-					</ul>
-				</div>	
+			<div class="section">
+    				<div id="jqb_object">
+    					<div class="jqb_slides">
+    						<% for (int i = 0 ; i < archivos.length; i++){
+    							String src = "./images/galeria_inicio/" + archivos[i];
+    						%>
+    							<div class="jqb_slide" title="slide title" ><a href="GalleryServlet"><img src="<%= src %>"  height="220" width="340"/></a></div>
+    						<% } %>
+    					</div>
+    					
+    					<div class="jqb_bar">
+    						<div id="btn_next" class="jqb_btn jqb_btn_next"></div>
+    						<div id="btn_pauseplay" class="jqb_btn jqb_btn_pause"></div>
+    						<div id="btn_prev" class="jqb_btn jqb_btn_prev"></div>
+    					</div>
+    				</div>
 			</div>
 			</div>
 		</form>

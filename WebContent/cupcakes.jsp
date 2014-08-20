@@ -199,7 +199,7 @@
 											<% }else if (cantidad){ %>
 												<select name="cantCupcakes" id="cantCupcakes">
 												<% 
-													for (int k = 20 ; k<101 ; k += 20){
+													for (int k = 20 ; k<101 ; k += 10){
 												%>
 													<option value="<%= k %>"><%= k %></option>
 												<% 

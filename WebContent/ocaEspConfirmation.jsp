@@ -56,19 +56,11 @@
 					if (error.equals("")){
 				%>
 				<div class="bienv">
-					<span class="bienv-title">&iexcl; Muchas gracias!.</span><br><br>
-						Hemos recibido su solicitud, en los pr&oacute;ximos d&iacute;as lo
-						estaremos contactando para confirmar su pedido y poderle ofrecer un presupuesto. 
-						<br><br>
-
-						Cualquier duda o inquietud lo invitamos a comunicarse con nosotros. <a href="ContactServlet"  class="readmore">Aqu&iacute;</a> 
-						podr&aacute; encontrar nuestros datos.
-
-						<br><br>
-
-						&iexcl;Hasta pronto!
-
-			   </div>
+					<span class="bienv-title">Muito obrigado!. </span><br/><br/>
+                    Recebemos o seu mensagem, O mais breve poss&#237;vel entraremos em contato para oferecer um or&#231;amento. <br /><br />
+                    Qualquer d&#250;vida voc&#234; pode entrar em contato conosco. 
+                    <a href="ContactServlet"  class="readmore">Aqui</a> voc&#234; pode encontrar os nossos dados. 
+               </div>
 			   <% }else{ %>
 			   <div class="bienv">
 					<span class="bienv-title">&iexcl; Le pedimos mil disculpas!.</span><br><br>

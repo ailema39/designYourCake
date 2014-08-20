@@ -102,9 +102,9 @@
 				<input type="hidden" name="txtCalcomania" id="txtCalcomania" value="<%= pedido.getCalcomania() ==null ? "" : pedido.getCalcomania() %>">
 
 				<div class="bienv">
-					<span class="bienv-title">Verifica los datos de tu pedido.</span><br><br>
-				  	Por favor ingrese la fecha de entrega para la cual desea su pedido: <input type="text" readonly="readonly" id="datepicker" name="txtFecha" />
-			  		<span class="error" id="errorDate">Disculpe, debe introducir una fecha de entrega válida</span><br><br>
+					<span class="bienv-title">Confira os detalhes do seu pedido.</span><br><br>
+				  	Por favor, indique a data de entrega para o qual voc&#234; deseja seu pedido: <input type="text" readonly="readonly" id="datepicker" name="txtFecha" /><br />
+			  		<span class="error" id="errorDate">Desculpe, você precisa digitar uma data válida da entrega</span><br/><br/>
 					<div id="pedido">
 						<%
 						String colores = "";
@@ -121,16 +121,16 @@
 					         	}
 						}
 			        	 %>
-						<strong>Producto pedido:</strong> Cupcakes. <br>
-			    		<strong>Tama&ntilde;o:</strong> <%= pedido.getTamano() %>.<br>
+						<strong>Produto encomendado:</strong> Cupcakes. <br>
+			    		<strong>Tamanho:</strong> <%= pedido.getTamano() %>.<br>
 			    		<% if (pedido.getCantidad() != null && pedido.getCantidad().contains("docena en caja")){ %>
-			     			<strong>Cantidad:</strong>  1 Docena en caja para regalar.<br>
+			     			<strong>Quantidade:</strong>  1 Docena en caja para regalar.<br>
 			     			<strong>Texto de la Calmon&iacute;a:</strong>  <%= pedido.getCalcomania() %>.<br>
 			     		<% }else{%>
-			     			<strong>Cantidad:</strong>  <%= pedido.getCantidadDocenas() %> Unidades.<br>
+			     			<strong>Quantidade:</strong>  <%= pedido.getCantidadDocenas() %> Unidades.<br>
 			     		<% }%>
-			    		<strong>Sabor(es) de los cupcakes:</strong> <%= pedido.getSabor() %>.<br>
-			     		<strong>Cubierta(s):</strong>  <%= pedido.getCubiertas() %>.<br>
+			    		<strong>Sabor(es) dos Cupcakes:</strong> <%= pedido.getSabor() %>.<br>
+			     		<strong>Cobertura(s):</strong>  <%= pedido.getCubiertas() %>.<br>
 			     		<% if (!colores.equals("")) { %>
 			     		<strong>Color(es):</strong>  <%= colores %><br>
 			     		<% } %>
