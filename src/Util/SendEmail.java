@@ -421,7 +421,7 @@ public class SendEmail  extends Thread  {
          	if (relleno != null)
          		messa += " Sabores de camadas:  " + rell + "<br>" ;
          	
-         	messa += " Sabores da cobertura:  " + datos[4] + ".<br><br>" +
+         	messa += " Decora&#231;&#227;o:  " + datos[4] + ".<br><br>" +
 	     		" Pre&#231;o: R$. " + datos[5] + ".<br><br>" +
 	     		" Data de entrega:  " + datos[7] + ".<br><br>" +	     		
 	     		" <strong>Detalhes do Comprador: </strong> <br><br> " +
