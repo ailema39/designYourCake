@@ -101,7 +101,7 @@
 	</div>
 	<div id="content-aux">
 		<div id="loading"></div>
-		<div class="title-img"><a href="GalleryServlet"> <img src="images/return.png"> </a> Ocasi&#245;es Especiais </div>
+		<div class="title-img"><a href="GalleryServlet"> <img src="images/return.png"> </a> Pirulitos e Cake Pops </div>
 		<% 	if (photos.size() > 0){ %>
 		<div class="content example3">
 				<div id="tj_container" class="tj_container">

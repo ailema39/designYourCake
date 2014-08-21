@@ -81,7 +81,7 @@
         <div id="menu">
 			<div class="menuitemHome" ><a href="../UserLoginServlet">Home</a></div>	
 	    	<ul>
-            	<li class="menuitem"><a href="../CreateAlbumServlet">Agregar Álbum</a></li>
+            	<li class="menuitem"></li>
             </ul>
 			<div class="menuitemPass"><a href="../EditUserPasswordServlet">Cambiar Contraseña</a></div>
 			<div class="menuitemSalir"><a href="../admin/index.jsp">Salir</a></div>	

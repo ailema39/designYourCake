@@ -19,7 +19,6 @@
     <li><a href="../ListClientsServlet">Clientes</a></li>
 	<li><a href="../ListOrderStepsServlet?typeId=2">Cupcakes</a></li>
     <li><a href="../ListOrderStepsServlet?typeId=1">Tortas</a></li>
-    <li><a href="../ListOrderStepsServlet?typeId=3">Dulces Tortas</a></li>
 	<li><a href="../ListAlbumsServlet">Galería</a></li>
 <%
 	}
