@@ -91,6 +91,7 @@ public class CreateStepOptionServlet extends HttpServlet {
 			Double price = Double.valueOf(request.getParameter("txtPrice"));
 			Double priceTwo = 0.0;
 			Double priceThree = 0.0;
+			Double priceFour = 0.0;
 			
 			int isUnavailable = 0;
 			
@@ -102,6 +103,9 @@ public class CreateStepOptionServlet extends HttpServlet {
 			
 			if (request.getParameter("txtPrice3") != null)
 				priceThree = Double.valueOf(request.getParameter("txtPrice3"));
+			
+			if (request.getParameter("txtPrice4") != null)
+				priceFour = Double.valueOf(request.getParameter("txtPrice4"));
 					
 			StepOption option = new StepOption();
 			option.setOrderStepId(stepId);
@@ -112,6 +116,7 @@ public class CreateStepOptionServlet extends HttpServlet {
 			option.setUnavailable(isUnavailable);
 			option.setPriceTwo(priceTwo);
 			option.setPriceThree(priceThree);
+			option.setPriceFour(priceFour);
 		
 			Integer rowsUpdated  = (Integer) CommandExecutor.getInstance().executeDatabaseCommand(new command.CreateStepOption(option));
 			

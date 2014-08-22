@@ -97,6 +97,7 @@ public class EditStepOptionServlet extends HttpServlet {
 			Double price = Double.valueOf(request.getParameter("txtPrice"));
 			Double priceTwo = 0.0;
 			Double priceThree = 0.0;
+			Double priceFour = 0.0;
 			
 			int isUnavailable = 0;
 			
@@ -108,6 +109,9 @@ public class EditStepOptionServlet extends HttpServlet {
 			
 			if (request.getParameter("txtPrice3") != null)
 				priceThree = Double.valueOf(request.getParameter("txtPrice3"));
+			
+			if (request.getParameter("txtPrice4") != null)
+				priceFour = Double.valueOf(request.getParameter("txtPrice4"));
 						
 			StepOption option = new StepOption();
 			option.setId(optionId);
@@ -117,6 +121,7 @@ public class EditStepOptionServlet extends HttpServlet {
 			option.setPrice(price);
 			option.setPriceTwo(priceTwo);
 			option.setPriceThree(priceThree);
+			option.setPriceFour(priceFour);
 			option.setPosition(position);
 			option.setOldPosition(oldPosition);
 			option.setUnavailable(isUnavailable);			

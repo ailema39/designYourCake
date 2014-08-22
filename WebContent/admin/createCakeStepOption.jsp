@@ -57,12 +57,14 @@
 						<textarea name="txtName" id="txtName" rows="2" cols="50"></textarea> <br><br>
 						<label for="name">Descripción:</label>
 						<textarea name="txtDescription" id="txtDescription" rows="3" cols="50"></textarea> <br><br>
-						<label for="name">Precio Pequeña:</label>
+						<label for="name">Precio 3 Kilos:</label>
 						<input type="text" name="txtPrice" id="txtPrice" maxlength="5" size="5" /> <br><br>
-						<label for="name">Precio Mediana:</label>
+						<label for="name">Precio 4 Kilos:</label>
 						<input type="text" name="txtPrice2" id="txtPrice2" maxlength="5" size="5" /> <br><br>
-						<label for="name">Precio Grande:</label>
+						<label for="name">Precio 6 Kilos:</label>
 						<input type="text" name="txtPrice3" id="txtPrice3" maxlength="5" size="5" /> <br><br>
+						<label for="name">Precio 8 Kilos:</label>
+						<input type="text" name="txtPrice4" id="txtPrice3" maxlength="5" size="5" /> <br><br>
 						<input type="checkbox" name="txtIsUnavailable" class="check" id="txtIsUnavailable" maxlength="50" size="40" value="isUnavailable" />&nbsp; 
 							&nbsp;&nbsp; Está Agotado<br><br>
 						

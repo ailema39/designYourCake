@@ -24,7 +24,7 @@ public class CreateStepOption implements DatabaseCommand {
 		int rowsUpdated = sta.executeUpdate();
 
 		int lastIdInserted = -1;
-		sta = conn.prepareStatement("INSERT INTO step_option (ORDER_STEP_ID, NAME, DESCRIPTION, POSITION, PRICE, IS_UNAVAILABLE, PRICE_TWO, PRICE_THREE) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+		sta = conn.prepareStatement("INSERT INTO step_option (ORDER_STEP_ID, NAME, DESCRIPTION, POSITION, PRICE, IS_UNAVAILABLE, PRICE_TWO, PRICE_THREE, PRICE_FOUR) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
 		
 		sta.setLong(1, option.getOrderStepId());
 		sta.setString(2, option.getName());
@@ -34,6 +34,7 @@ public class CreateStepOption implements DatabaseCommand {
 		sta.setInt(6, option.isUnavailable());
 		sta.setDouble(7, option.getPriceTwo());
 		sta.setDouble(8, option.getPriceThree());
+		sta.setDouble(9, option.getPriceFour());
 		rowsUpdated = sta.executeUpdate();
 
 		if (rowsUpdated == 1){

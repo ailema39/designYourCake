@@ -150,17 +150,17 @@
 			%>
 			<div id="datosVerif" >
 				<div class="bienv">
-					<span class="bienv-title">&iexcl; Muchas gracias!.</span><br><br>
+					<span class="bienv-title"> Muito obrigado!</span><br><br>
 						Hemos recibido su pedido, en los pr&oacute;ximos d&iacute;as lo
 						estaremos contactando para confirmar su compra y coordinar el env&iacute;o. 
 						<br><br>
 
-						Cualquier duda o inquietud lo invitamos a comunicarse con nosotros. <a href="ContactServlet"  class="readmore">Aqu&iacute;</a> 
-						podr&aacute; encontrar nuestros datos.
+						Quaisquer d&#250;vidas ou preocupa&#231;&#245;es voc&#234; pode entrar em contato conosco. <a href="ContactServlet"  class="readmore">Aqui</a> 
+						voc&#234; pode encontrar os nossos dados.
 
 						<br><br>
 
-						&iexcl;Hasta pronto!
+						Design Your Cake!
 
 			   </div>
 			</div>
@@ -169,8 +169,8 @@
 					<span class="bienv-title">&iexcl; Le pedimos mil disculpas!.</span><br><br>
 						Ha ocurrido un error al intentar procesar su solicitud. Lo invitamos a que intente m&aacute;s tarde. 
 						En caso de que el error persista puede comunicarse con nuestro equipo de soporte, bien sea
-						llam&aacute;ndonos directamente o mand&aacute;ndonos un correo. <a href="ContactServlet"  class="readmore">Aqu&iacute;</a> 
-						podr&aacute; encontrar nuestros datos.
+						llam&aacute;ndonos directamente o mand&aacute;ndonos un correo. <a href="ContactServlet"  class="readmore">Aqui</a> 
+						voc&#234; pode encontrar os nossos dados.
 
 						<br><br>
 			   </div>

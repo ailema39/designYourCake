@@ -15,11 +15,12 @@
 <script type="text/javascript" charset="utf-8">
 	$(document).ready(function() {
 		$('#example').dataTable( {
-			"iDisplayLength": 8,
+			"iDisplayLength": 9,
 			"bLengthChange": false,
 			"sScrollY": "250px",
 			"bPaginate": false,
 			"aoColumns": [
+				null,
 				null,
 				null,
 				null,
@@ -143,9 +144,10 @@
 								<th>ID</th>
 								<th>Paso</th>
 								<th>Nombre</th>
-								<th>Precio Pequeña</th>
-								<th>Precio Mediana</th>
-								<th>Precio Grande</th>
+								<th>Precio 3 Kilos</th>
+								<th>Precio 4 Kilos</th>
+								<th>Precio 6 Kilos</th>
+								<th>Precio 8 Kilos</th>
 								<th>Agotado</th>
 								<th>Acciones</th>
 							</tr>
@@ -161,6 +163,7 @@
 									<td><%= o.getPrice() %></td>
 									<td><%= o.getPriceTwo() %></td>
 									<td><%= o.getPriceThree() %></td>
+									<td><%= o.getPriceFour() %></td>
 									<td><%= (o.isUnavailable()==1)?"Si":"No"  %></td>
 									<td><p> 
 										<a href="../EditStepOptionServlet?optionId=<%= o.getId() %>&stepId=<%= o.getOrderStepId() %>&typeId=<%= typeInfo.getId() %>&priceMode=<%= priceMode %>" style="color: transparent" >

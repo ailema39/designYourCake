@@ -60,14 +60,14 @@
 					deseeas, entrando: <strong>Minha Conta</strong> e clicar na op&#231;&#227;o de  <strong>Altera&#231;&#227;o de Senha</strong>.
 					 
 					<br><br>
-					Obrigado por nos escolher!.
+					Obrigado por nos escolher!
 				<% }else{ %>
-					<span class="bienv-title">¡Te pedimos disculpas!</span><br><br>
-					Ha ocurrido un error al intentar generar tu nueva contrase&ntilde;a. Por favor, intente m&aacute;s tarde. 
-					De persistir el problema lo invitamos a comunicarse con nosotros para transmitirnos el error.
+					<span class="bienv-title">Pedimos desculpas!</span><br><br>
+					Ha ocurrido un error al intentar generar tu nueva contrase&ntilde;a. Por favor, tente mais tarde. 
+					O problema persistir, n&#243;s convidamos voc&#234; a contactar-nos para transmitir o erro. 
 					
 					<br><br>
-					¡Muchas gracias por elegirnos!. 
+					Obrigado por nos escolher!
 				<% } %>
 			</div>
 		</div>

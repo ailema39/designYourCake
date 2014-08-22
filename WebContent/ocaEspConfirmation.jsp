@@ -56,7 +56,7 @@
 					if (error.equals("")){
 				%>
 				<div class="bienv">
-					<span class="bienv-title">Muito obrigado!. </span><br/><br/>
+					<span class="bienv-title"> Muito obrigado!</span><br/><br/>
                     Recebemos o seu mensagem, O mais breve poss&#237;vel entraremos em contato para oferecer um or&#231;amento. <br /><br />
                     Qualquer d&#250;vida voc&#234; pode entrar em contato conosco. 
                     <a href="ContactServlet"  class="readmore">Aqui</a> voc&#234; pode encontrar os nossos dados. 
@@ -66,8 +66,8 @@
 					<span class="bienv-title">&iexcl; Le pedimos mil disculpas!.</span><br><br>
 						Ha ocurrido un error al intentar procesar su solicitud. Lo invitamos a que intente m&aacute;s tarde. 
 						En caso de que el error persista puede comunicarse con nuestro equipo de soporte, bien sea
-						llam&aacute;ndonos directamente o mand&aacute;ndonos un correo. <a href="ContactServlet"  class="readmore">Aqu&iacute;</a> 
-						podr&aacute; encontrar nuestros datos.
+						llam&aacute;ndonos directamente o mand&aacute;ndonos un correo. <a href="ContactServlet"  class="readmore">Aqui;</a> 
+						voc&#234; pode encontrar os nossos dados.
 
 						<br><br>
 			   </div>

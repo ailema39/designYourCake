@@ -61,12 +61,14 @@
 						<textarea name="txtName" id="txtName" rows="2" cols="50"><%= optionInfo.getName() %></textarea> <br><br>
 						<label for="name">Descripción:</label>
 						<textarea name="txtDescription" id="txtDescription" rows="2" cols="50"><%= (optionInfo.getDescription()!=null)?optionInfo.getDescription():"" %></textarea> <br><br>
-						<label for="name">Precio Pequeña:</label>
+						<label for="name">Precio 3 Kilos:</label>
 						<input type="text" name="txtPrice" id="txtPrice" maxlength="5" size="5" value="<%= optionInfo.getPrice() %>" /> <br><br>
-						<label for="name">Precio Mediana:</label>
+						<label for="name">Precio 4 Kilos:</label>
 						<input type="text" name="txtPrice2" id="txtPrice2" maxlength="5" size="5" value="<%= optionInfo.getPriceTwo() %>" /> <br><br>
-						<label for="name">Precio Grande:</label>
+						<label for="name">Precio 6 Kilos:</label>
 						<input type="text" name="txtPrice3" id="txtPrice3" maxlength="5" size="5" value="<%= optionInfo.getPriceThree() %>" /> <br><br>
+						<label for="name">Precio 8 Kilos:</label>
+						<input type="text" name="txtPrice4" id="txtPrice4" maxlength="5" size="5" value="<%= optionInfo.getPriceFour() %>" /> <br><br>
 						<%
 						if (optionInfo.isUnavailable() == 1){
 						%>

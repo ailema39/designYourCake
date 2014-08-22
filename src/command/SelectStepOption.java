@@ -20,7 +20,7 @@ public class SelectStepOption implements DatabaseCommand {
 		// select an order step in the database
 
 		StepOption option = new StepOption();
-		PreparedStatement sta = conn.prepareStatement("SELECT SO.ID, SO.ORDER_STEP_ID, SO.NAME, SO.DESCRIPTION, SO.POSITION, SO.IMAGE, SO.PRICE, SO.IS_UNAVAILABLE, SO.PRICE_TWO, SO.PRICE_THREE FROM step_option SO WHERE SO.ID = ? ");
+		PreparedStatement sta = conn.prepareStatement("SELECT SO.ID, SO.ORDER_STEP_ID, SO.NAME, SO.DESCRIPTION, SO.POSITION, SO.IMAGE, SO.PRICE, SO.IS_UNAVAILABLE, SO.PRICE_TWO, SO.PRICE_THREE, SO.PRICE_FOUR FROM step_option SO WHERE SO.ID = ? ");
 		sta.setLong(1, this.optionId);
 		ResultSet rs = sta.executeQuery();
 		
@@ -35,6 +35,7 @@ public class SelectStepOption implements DatabaseCommand {
 			option.setUnavailable(rs.getInt(8));
 			option.setPriceTwo(rs.getDouble(9));
 			option.setPriceThree(rs.getDouble(10));
+			option.setPriceFour(rs.getDouble(11));
 		}
 		
 		rs.close();

@@ -10,6 +10,7 @@ public class StepOption {
 	private double price;
 	private double priceTwo;
 	private double priceThree;
+	private double priceFour;
 	private int isUnavailable;
 	private String description;
 	private String image;
@@ -100,6 +101,14 @@ public class StepOption {
 
 	public double getPriceThree() {
 		return priceThree;
+	}
+
+	public void setPriceFour(double priceFour) {
+		this.priceFour = priceFour;
+	}
+
+	public double getPriceFour() {
+		return priceFour;
 	}
 	
 	
