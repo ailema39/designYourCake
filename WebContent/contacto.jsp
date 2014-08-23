@@ -36,7 +36,7 @@
 			<ul style="margin: 0px; ">
 				<li><a href="HomePageServlet">Design Your Cake</a></li>
 				<li><a href="underConstruction.jsp">Criar Bolo</a></li>
-				<li><a href="underConstruction.jsp">Doces</a></li>
+				<li><a href="DulcesTortasServlet?typeId=3">Doces</a></li>
 				<li><a href="underConstruction.jsp">Criar Cupcakes</a></li>
 				<li><a href="underConstruction.jsp">Ocasi&#245;es Especiais</a></li>
 				<li><a href="GalleryServlet">Portafolio</a></li>

@@ -27,9 +27,6 @@
 	HttpSession infoPage = request.getSession();
 	session.setAttribute("prevPage", "DulcesTortasServlet?typeId=3");
 	Client client = (Client) infoPage.getAttribute("client");
-	HashMap<String, String> hashMap = new HashMap<String, String>();
-	HashMap<String, Double> hashMapPrice = new HashMap<String, Double>();
-	HashMap<String, Long> hashMapId = new HashMap<String, Long>();
 %>
 <div class="wrapper">
 	<div id="header">
@@ -42,9 +39,9 @@
 			</div>
 			<ul style="margin: 0px; ">
 				<li><a href="HomePageServlet">Design Your Cake</a></li>
-				<li><a href="ArmaTuTortaServlet?typeId=1">Criar Bolo</a></li>
+				<li><a href="underConstruction.jsp">Criar Bolo</a></li>
 				<li class="current"><a href="DulcesTortasServlet?typeId=3">Doces</a></li>
-				<li><a href="CupcakesServlet?typeId=2">Criar Cupcakes</a></li>
+				<li><a href="underConstruction.jsp">Criar Cupcakes</a></li>
 				<li><a href="OcasionesEspecialesServlet">Ocasi&#245;es Especiais</a></li>
 				<li><a href="GalleryServlet">Portafolio</a></li>
 				<li><a href="ContactServlet">Contato</a></li>
@@ -61,8 +58,7 @@
 			<div class="aside">
 				<div class="title"> Desfrutar de nossos mais deliciosos doces!</div>
 				<jsp:useBean id="options" type="java.util.ArrayList<domain.StepOption>" scope="request"/>  	
-        		<% if (client != null){ %>
-				<div class="cakes">
+        		<div class="cakes">
                     <div class="st1">
     					<div class="dt-title">Pirulitos recheados</div>
                         Dois biscoitos, recheados com o sabor de sua escolha e coberto com chocolate.
@@ -92,18 +88,6 @@
                     <img src="../images/1407908056_prev.png" class="dt-prev" style="display: none;"/>
                     <img src="../images/1407908056_next.png" class="dt-next"/>
              	</div>	
-				<% }else{ %>
-					<br>
-					<div style="text-align: justify; margin-left: 30px;">
-						Desculpe, para aceder a esta sec&#231;&#227;o precisa de estar registado. <br><br>
-						
-						Nesta se&#231;&#227;o voc&#234; pode encomendar qualquer um dos nossos deliciosos bolos.<br><br>
-						
-						Se voc&#234; n&#227;o estiver cadastrado, <a href="registro.jsp" class="readmore"> cadastre-se aqui.</a> <br><br>
-						
-						Se voc&#234; j&#225; &#233; cadastrado, <a href="#signup"  rel="leanModal" id="go" class="readmore"> entre aqui.</a>
-					</div>
-				<% } %>
 			</div>	
 			
 			<div class="section">

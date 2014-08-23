@@ -596,13 +596,13 @@ function mostrarImgCubierta(imagen, id){
 		coloresSurtidos = false;
 
 		var preColor = "";
-		if (valueC == "55"){
+		//if (valueC == "55"){
 			preColor = "./images/cupcakes/55_";
-		}
-		else if (valueC == "56"){
+		//}
+		/*else if (valueC == "56"){
 			preColor = "./images/cupcakes/56_";
 			
-		}
+		}*/
 		
 		if (value == "69"){
 				coloresSurtidos = true;

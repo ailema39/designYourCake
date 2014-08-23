@@ -126,8 +126,7 @@
 								OrderStep actualOrder = listO.getOrder();
 								int isMultChoice = actualOrder.isMultipleChoice();
 								String type = "radio";
-								if (isMultChoice == 1)
-									type = "checkbox";
+								if (isMultChoice == 1)	type = "checkbox";
 								
 					%>
 					<% if ( i == 1) { %>
@@ -147,7 +146,7 @@
 									hashMapId.put(step.getName(), step.getId());
 								
 								%>
-							<input  class="rdB<%= i %>" onClick="prueba('<%= imagen %>','<%= i %>', '<%= step.getId() %>', this);" type="<%= type %>" name="<%= i %>" value="<%= j %>" ><span id="name<%= i+ "" +j%>">  <%= step.getName()%><%= imgDescription %></span> <br>
+							<label><input  class="rdB<%= i %>" onClick="prueba('<%= imagen %>','<%= i %>', '<%= step.getId() %>', this);" type="<%= type %>" name="<%= i %>" value="<%= j %>" ><span id="name<%= i+ "" +j%>">  <%= step.getName()%><%= imgDescription %></span></label>
 							<span style="display:none;" class="price-int<%= i %><%= j %>"> <%= step.getPrice() %></span>
 							<% }
 							%>
@@ -188,14 +187,13 @@
 									}
 								%>
 										<div class="<%= div %>">
-											<input  class="rdB<%= i %>"  type="<%= type %>" name="<%= i %>" value="<%= j+1 %>" > <span id="name<%= i+ "" +j%>">  <%= step.getName()%></span>
+											<label><input  class="rdB<%= i %>"  type="<%= type %>" name="<%= i %>" value="<%= j+1 %>" > <span id="name<%= i+ "" +j%>">  <%= step.getName()%></span>
 											<span style="display:none;" class="price-int<%= i %><%= j %>"> <%= step.getPrice() %></span>
 											<% if (regalo){  %>
 											<div id="calcomania" style="display:none;">
 												<span style="color: gray; font-size: 16px; margin-left: 15px;"> Coloca el texto de tu calcoman&iacute;a aqu&iacute; </span>: 
 												<input name="txtCalcomania" id="txtCalcomania" type="text" >
 											</div>
-											<br>
 											<% }else if (cantidad){ %>
 												<select name="cantCupcakes" id="cantCupcakes">
 												<% 
@@ -205,7 +203,7 @@
 												<% 
 													}
 												%>
-											</select>
+											</select></label>
 											<span style="color: gray; font-size: 16px; margin-left: 15px;">
 												<br>
 											</span>
@@ -263,13 +261,13 @@
 									if (actualOptions.size() > 4){
 								%>
 										<div class="options-steps-left">
-											<input  class="rdB<%= i %>" onClick="prueba('<%= imagen %>','<%= i %>','<%= step.getId() %>', this );" type="<%= type %>" name="<%= i %>" value="<%= j %>" ><span id="name<%= i+ "" +j%>">  <%= step.getName()%><%= imgDescription %></span> <br>
+											<label><input  class="rdB<%= i %>" onClick="prueba('<%= imagen %>','<%= i %>','<%= step.getId() %>', this );" type="<%= type %>" name="<%= i %>" value="<%= j %>" ><span id="name<%= i+ "" +j%>">  <%= step.getName()%><%= imgDescription %></span></label>
 											<span style="display:none;" class="price-int<%= i %><%= j %>"> <%= step.getPrice() %></span>
 										</div>	
 								<%
 									}else{
 								%>
-									<input  class="rdB<%= i %>" type="<%= type %>" name="<%= i %>" value="<%= j %>" ><span id="name<%= i+ "" +j%>">  <%= step.getName()%><%= imgDescription %></span> <br>
+									<label><input  class="rdB<%= i %>" type="<%= type %>" name="<%= i %>" value="<%= j %>" ><span id="name<%= i+ "" +j%>">  <%= step.getName()%><%= imgDescription %></span></label>
 									<span style="display:none;" class="price-int<%= i %><%= j %>"> <%= step.getPrice() %></span>
 								
 								<% 
@@ -323,7 +321,7 @@
 				<% } %>
 			</div>
 			<% if (client != null){ %>
-				<div class="subtotal-sectionTortas"> Sub-total: <span class="price"> 0,00</span> </div>
+				<div class="subtotal-sectionTortas"> Sub-total: R$ <span class="price"> 0,00</span> </div>
 			<% } %>
 			<% if (client != null){ %>
 			<div class="banner">

@@ -41,7 +41,7 @@
 			<ul style="margin: 0px; ">
 				<li class="current"><a href="HomePageServlet">Design Your Cake</a></li>
 				<li><a href="underConstruction.jsp">Criar Bolo</a></li>
-				<li><a href="underConstruction.jsp">Doces</a></li>
+				<li><a href="DulcesTortasServlet?typeId=3">Doces</a></li>
 				<li><a href="underConstruction.jsp">Criar Cupcakes</a></li>
 				<li><a href="underConstruction.jsp">Ocasi&#245;es especiais</a></li>
 				<li><a href="GalleryServlet">Portafolio</a></li>
@@ -54,7 +54,7 @@
     %>	
 	<div id="content">
         <div class="back"></div>
-    		<div class="home">
+    		<div class="home hspc">
     			<div class="aside">
                     <p><span class="dyc">Design Your Cake</span> nascido em Caracas, Venezuela h&aacute; 4 anos com a id&eacute;ia de combiar os melhores sabores,
                      com desenhos exclusivos e criados para cada pessoa. </p>

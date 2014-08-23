@@ -334,12 +334,15 @@ p a {
 
 
 #content div.home {
-	overflow: hidden;
 	width: 960px;
-    position: absolute;
-    top: 0;
-    left: 0;
 }
+
+#content div.hspc {
+	position: absolute;
+    top:0;
+    left:0;
+}
+
 
 #content div#about div.aside,
 #content div#services div.aside {

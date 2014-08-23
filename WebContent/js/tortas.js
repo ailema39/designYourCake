@@ -5,6 +5,7 @@ $(document).ready(function() {
 	var priceCapa1 = 0;
 	var priceCapa2 = 0;
 	var priceCapa3 = 0;
+    var tam        = 1;
 	
 	$("a[rel*=leanModal]").leanModal({ top : 200, overlay : 0.4, closeButton: ".modal_close" });
 
@@ -71,7 +72,7 @@ $(document).ready(function() {
 		$("#bt1Disable").hide();
 		$("#bt1").show();
 		var j = $(this).val();
-		getPrice(1,j);
+        getPrice(1,j);
 	
 	});
 	
@@ -81,7 +82,11 @@ $(document).ready(function() {
 		$("#bt2Disable").hide();
 		$("#bt2").show();
 		var j = $(this).val();
-		getPrice(2,j);
+        if (j == 1) tam = 1;
+        else if (j == 2 || j == 3) tam = 2;
+        else if (j == 4 || j == 5) tam = 3;
+        else tam = 4;
+        getPrice(2,j);
 	
 	});
   
@@ -90,7 +95,7 @@ $(document).ready(function() {
 		$("#bt3Disable").hide();
 		$("#bt3").show();
 		var j = $(this).val();
-		getPrice(3,j);
+       	getPrice(3,j);
 		name  = getName(3,j);
 		
 	});
@@ -281,9 +286,12 @@ $(document).ready(function() {
 	
 	/* Obtiene el precio del elemento seleccionado y lo suma al total */
 	function getPrice(i,j){
-		var priceAux = priceTotal;
-		var selectIdAux = '.price-int' + i+j;
-		var price = $(selectIdAux).text();
+       	var priceAux = priceTotal;
+        if (i > 2)
+		  var selectIdAux = '.price-int'+tam + i+j;
+        else
+          var selectIdAux = '.price-int1'+ i+j;
+       	var price = $(selectIdAux).text();
 		priceAux = priceAux + Number(price);
 		var priceText = priceAux + '.00';
 		$('.price').text(priceText);
@@ -295,7 +303,7 @@ $(document).ready(function() {
 	
 	function getPriceCapa(i,j){
 		var priceAux = priceTotal;
-		var selectIdAux = '.price-intC' + i+j;
+		var selectIdAux = '.price-intC'+tam + i+j;
 		var price = $(selectIdAux).text();
 		priceAux = priceAux + Number(price);
 		if ( i == 1)
@@ -311,7 +319,6 @@ $(document).ready(function() {
 		if (i == 5)
 			setPriceTotal();
 		return price;
-		
 	}
 	
 	

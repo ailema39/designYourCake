@@ -40,14 +40,8 @@
 		});
 	</script>
 	<script type="text/javascript" src="js/messages.js"></script>
-	<script type="text/javascript" charset="utf-8">
-		function inhabilitar(){ 
-		   	return false;
-		} 
-		document.oncontextmenu=inhabilitar;
-	</script>
 </head>
-<body oncontextmenu="return inhabilitar()">
+<body >
 <%
 	HttpSession infoPage = request.getSession();
 	session.setAttribute("prevPage", "HomePageServlet");
@@ -131,10 +125,10 @@
 			     		<% } %>
 			     		<strong>Decora&#231;&#227;o:</strong>   <%= pedido.getCubiertas() %>.<br/>
 					</div>
-					<div class="total"> Total: <%= pedido.getPrecio() %><br/></div><br/>
+					<div class="total"> Total: R$ <%= pedido.getPrecio() %><br/></div><br/>
      		   </div>
 			   <div class="dt-buttonInline">
-					<input type="button" name="sbmtButton" class="buttonInline" value="Cancelar" onclick="location.href='http://www.designyourcakes.com/ArmaTuTortaServlet?typeId=1';"  />
+					<input type="button" name="sbmtButton" class="buttonR" value="Cancelar" onclick="location.href='http://www.designyourcakes.com/ArmaTuTortaServlet?typeId=1';"  />
 					<input type="submit" name="sbmtButton" class="buttonInline" value="Encomendar"  />
 				</div> 
 			</form>
