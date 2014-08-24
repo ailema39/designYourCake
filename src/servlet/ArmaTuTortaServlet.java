@@ -145,11 +145,11 @@ public class ArmaTuTortaServlet extends HttpServlet {
 		saborInt = multipart.getParameter("3");
 		capasInt = multipart.getParameter("4");
 		
-		if (Integer.valueOf(capasInt) >= 1 && Integer.valueOf(capasInt) != 4)
+		if (Integer.valueOf(capasInt) != 4 && Integer.valueOf(capasInt) >= 1)
 			capa1 = multipart.getParameter("capa1");
-		if (Integer.valueOf(capasInt) >= 2 && Integer.valueOf(capasInt) != 4)
+		if (Integer.valueOf(capasInt) != 4 && Integer.valueOf(capasInt) >= 2)
 			capa2  = multipart.getParameter("capa2");
-		if (Integer.valueOf(capasInt) == 3 && Integer.valueOf(capasInt) != 4)
+		if (Integer.valueOf(capasInt) == 3)
 			capa3 = multipart.getParameter("capa3");
 		
 		
@@ -238,25 +238,31 @@ public class ArmaTuTortaServlet extends HttpServlet {
 		
 		/* Forma */
 		OrderItem item = new OrderItem();
-		item.setPrice(hashMapPrice.get("1"+formaInt));
+		item.setPrice(hashMapPrice.get("one1"+formaInt));
 		item.setStepOptionId(hashMapId.get("1"+formaInt));
 		orderItems.add(item);
-	
+		
 		/* Tamano */
 		item = new OrderItem();
-		item.setPrice(hashMapPrice.get("2"+tamInt));
+		item.setPrice(hashMapPrice.get("one2"+tamInt));
 		item.setStepOptionId(hashMapId.get("2"+tamInt));
 		orderItems.add(item);
 		
+		String varTam = "one";
+		if (tam.contains("4 Kilos")) 	  varTam = "two";
+		else if (tam.contains("6 Kilos")) varTam = "three";
+		else if (tam.contains("8 Kilos")) varTam = "four";
+		System.out.println("tam " + varTam );
+		
 		/* Sabor */
 		item = new OrderItem();
-		item.setPrice(hashMapPrice.get("3"+saborInt));
+		item.setPrice(hashMapPrice.get(varTam+"3"+saborInt));
 		item.setStepOptionId(hashMapId.get("3"+saborInt));
 		orderItems.add(item);
 		
 		/* Capas */
 		item = new OrderItem();
-		item.setPrice(hashMapPrice.get("4"+capasInt));
+		item.setPrice(hashMapPrice.get(varTam+"4"+capasInt));
 		item.setStepOptionId(hashMapId.get("4"+capasInt));
 		orderItems.add(item);
 		
@@ -272,7 +278,7 @@ public class ArmaTuTortaServlet extends HttpServlet {
 				else if (i == 2)
 					index = "5" + capa3;
 				
-				item.setPrice(hashMapPrice.get(index));
+				item.setPrice(hashMapPrice.get(varTam+index));
 				item.setStepOptionId(hashMapId.get(index));
 				orderItems.add(item);
 			}
@@ -280,7 +286,7 @@ public class ArmaTuTortaServlet extends HttpServlet {
 		
 		/* Cubierta */ 
 		item = new OrderItem();
-		item.setPrice(hashMapPrice.get("6"+cubiertaInt));
+		item.setPrice(hashMapPrice.get(varTam+"6"+cubiertaInt));
 		item.setStepOptionId(hashMapId.get("6"+cubiertaInt));
 		if (hashMapId.get("6"+cubiertaInt) == 42){
 			// Para que funcione local descomentar esta linea y comentar la otra
@@ -325,12 +331,18 @@ public class ArmaTuTortaServlet extends HttpServlet {
 			infoPage.removeAttribute("hashMapPrice");
 			infoPage.removeAttribute("hashMapId");
 			infoPage.removeAttribute("hashMap");
-		
+			capa1="";
+			capa2="";
+			capa3="";
+			formaInt="";tamInt="";saborInt="";capasInt="";cubiertaInt="";
 		} catch (Exception e) { 
 			System.out.println("Ocurrio un error al insertar la orden del cliente: " + clientId + ", el error fue:" + e.getMessage());
 			error = "error";
 		}
 		return error;
+		
+		
+		
 	}
 	
 }

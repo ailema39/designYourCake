@@ -45,7 +45,7 @@ public class ListPasos implements DatabaseCommand {
 					"SO.ORDER_STEP_ID, " +
 					"SO.NAME, SO.DESCRIPTION, " +
 					"SO.POSITION, SO.IMAGE, " +
-					"SO.PRICE, SO.PRICE, SO.PRICE_TWO, SO.PRICE_THREE, SO.PRICE_FOUR " +
+					"SO.PRICE, SO.PRICE_TWO, SO.PRICE_THREE, SO.PRICE_FOUR " +
 					"FROM step_option SO WHERE SO.ORDER_STEP_ID = ? AND SO.IS_DELETED=0 AND IS_UNAVAILABLE=0" +
 					" ORDER BY SO.POSITION ASC");
 				staInt.setLong(1, stepId);

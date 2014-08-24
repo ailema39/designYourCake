@@ -148,7 +148,7 @@
 								%>
 							<label><input  class="rdB<%= i %>" onClick="prueba('<%= imagen %>','<%= i %>', '<%= step.getId() %>', this);" type="<%= type %>" name="<%= i %>" value="<%= j %>" ><span id="name<%= i+ "" +j%>">  <%= step.getName()%><%= imgDescription %></span></label>
 							<span style="display:none;" class="price-int<%= i %><%= j %>"> <%= step.getPrice() %></span>
-							<% }
+                            <% }
 							%>
 						</div>
 						<span style="display: inline;" class="buttons">
@@ -169,8 +169,8 @@
 									String imagen = step.getImage();
 									
 									hashMap.put(i + "" +j, step.getName());
-									hashMapPrice.put(step.getName(), step.getPrice());
-									hashMapId.put(step.getName(), step.getId());
+									hashMapPrice.put("unidades", step.getPrice());
+									hashMapId.put("unidades", step.getId());
 									
 									boolean regalo = false;
 									boolean cantidad = false;
@@ -181,13 +181,10 @@
 										cantidad = true;
 									}
 									String div = "";
-									if (actualOptions.size() > 4){
-										div = "options-steps-left";
-									
-									}
+									if (actualOptions.size() > 4){	div = "options-steps-left"; }
 								%>
 										<div class="<%= div %>">
-											<label><input  class="rdB<%= i %>"  type="<%= type %>" name="<%= i %>" value="<%= j+1 %>" > <span id="name<%= i+ "" +j%>">  <%= step.getName()%></span>
+                                           	<label><input  class="rdB<%= i %>"  type="<%= type %>" name="<%= i %>" value="<%= j+1 %>" > <span id="name<%= i+ "" +j%>">  <%= step.getName()%></span>
 											<span style="display:none;" class="price-int<%= i %><%= j %>"> <%= step.getPrice() %></span>
 											<% if (regalo){  %>
 											<div id="calcomania" style="display:none;">
@@ -258,21 +255,27 @@
 									hashMap.put(i + "" +j, step.getName());
 									hashMapPrice.put(step.getName(), step.getPrice());
 									hashMapId.put(step.getName(), step.getId());
+                                    String input = " ";
+                                    if (i == 5 && step.getName().contains("Pasta americana")){
+                                        input = "<input type=\"text\" name=\"pamertext\" class=\"dc-text\" placeholder=\"Decora&#231;&#227;o\"/>";
+                                    }
 									if (actualOptions.size() > 4){
 								%>
 										<div class="options-steps-left">
 											<label><input  class="rdB<%= i %>" onClick="prueba('<%= imagen %>','<%= i %>','<%= step.getId() %>', this );" type="<%= type %>" name="<%= i %>" value="<%= j %>" ><span id="name<%= i+ "" +j%>">  <%= step.getName()%><%= imgDescription %></span></label>
+                                            <%= input %>
 											<span style="display:none;" class="price-int<%= i %><%= j %>"> <%= step.getPrice() %></span>
 										</div>	
 								<%
 									}else{
 								%>
 									<label><input  class="rdB<%= i %>" type="<%= type %>" name="<%= i %>" value="<%= j %>" ><span id="name<%= i+ "" +j%>">  <%= step.getName()%><%= imgDescription %></span></label>
+                                    <%= input %>
 									<span style="display:none;" class="price-int<%= i %><%= j %>"> <%= step.getPrice() %></span>
 								
 								<% 
 									}
-								}
+                               	}
 								%>
 							
 						</div>

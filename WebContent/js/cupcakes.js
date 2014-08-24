@@ -106,7 +106,7 @@ $(document).ready(function(){
 	/* Click en cualquier radio button del paso 4*/
 	$(".rdB4").click(function(){
         value = $(this).val();
-		getPrice(4,value);
+        getPrice(4,value);
 	});
 	
 	
@@ -508,7 +508,7 @@ function mostrarImgCubierta(imagen, id){
 		//var value = $(element).val();
 		cubiertaEscogida = id;
 		var cubierta = "";
-      	
+        
         $("#pasoImgBase").attr('src',"./images/paso_cupcakes_4.png");
 		cubierta = "./images/cupcakes/" + imagen;
 		
@@ -518,6 +518,9 @@ function mostrarImgCubierta(imagen, id){
              $("#bt4").hide();
              $("#bt4-esp").show();
         }
+        if (id == "83" || id == "84" || id == "85")
+            mostrarMsj2();
+        else  mostrarMsj1();
 		if (id == "60"){
 			unaCubierta = false;
 			$("#pasoImgBase").attr('src',"./images/paso_cupcakes_4_block5.png");
@@ -592,17 +595,15 @@ function mostrarImgCubierta(imagen, id){
 		var color = "";
 		var checked = $(element).is(':checked');
 		
-		
 		coloresSurtidos = false;
 
 		var preColor = "";
-		//if (valueC == "55"){
-			preColor = "./images/cupcakes/55_";
-		//}
-		/*else if (valueC == "56"){
-			preColor = "./images/cupcakes/56_";
-			
-		}*/
+        var show = "true";
+		if (valueC == "84" || valueC == "85" || valueC == "86"){
+			return;
+		}
+        else
+        	preColor = "./images/cupcakes/55_";
 		
 		if (value == "69"){
 				coloresSurtidos = true;
@@ -712,6 +713,7 @@ function mostrarImgCubierta(imagen, id){
 	function mostrarImgDecoracion(imagen, id){
 		/* Obtengo el valor de la cubierta escogida */
 		var valueCubierta = cubiertaEscogida;
+        alert(valueCubierta);
 		/* Valor de la decoracion escogida*/
 		var value = id;
 		var decoracion = "";
@@ -837,3 +839,22 @@ function mostrarImgCubierta(imagen, id){
 		idP3 = id2;
 	}
 	
+    
+    function mostrarMsj1(){
+         $('.rdB5').attr("disabled", false);
+         $( ".rdB5" ).each(function( i ) {
+            text = $(this).next('span').text();
+            if (text.indexOf("Pasta americana") > 0) $(this).attr("disabled", true);
+         });
+         $(".dc-text").hide();
+    }
+    
+    function mostrarMsj2(){
+        $('.rdB5').attr("disabled", true);
+         $( ".rdB5" ).each(function( i ) {
+            text = $(this).next('span').text();
+            if (text.indexOf("Pasta americana") > 0) $(this).attr("disabled", false);
+                
+         });
+         $(".dc-text").show();
+    }

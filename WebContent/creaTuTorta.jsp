@@ -102,7 +102,7 @@
 									String description = step.getDescription();
 									String imagen = step.getImage();
 									hashMap.put(i + "" +j, step.getName());
-									hashMapPrice.put(i + "" +j, step.getPrice());
+									hashMapPrice.put("one" + i + "" +j, step.getPrice());
 									hashMapId.put(i + "" +j, step.getId());
 								%>
 							
@@ -128,14 +128,19 @@
 							</p>
 							<div class="options-steps">
 								<div id="capa1" style="display:none">
-									Capa 1: <select name="capa1"  id="selectCapa1"> 
+									Camada 1: <select name="capa1"  id="selectCapa1"> 
 									<option value="0">  Selecione Sabor
 									<% for(int j= 1; j<= actualOptions.size(); j++) {
 										int aux2 = j - 1;
 										StepOption step = actualOptions.get(aux2);
 										String imagen = step.getImage();
 										hashMap.put(i + "" +j, step.getName());
-										hashMapPrice.put(i + "" +j, step.getPrice());
+										//hashMapPrice.put(i + "" +j, step.getPrice());
+										hashMapPrice.put("one" + i + "" +j, step.getPrice());
+										hashMapPrice.put("two" + i + "" +j, step.getPriceTwo());
+										hashMapPrice.put("three" + i + "" +j, step.getPriceThree());
+										hashMapPrice.put("four" + i + "" +j, step.getPriceFour());
+										
 										hashMapId.put(i + "" +j, step.getId());
 											
 									%>
@@ -155,7 +160,7 @@
 									<% }%>
 								</div>
 								<div id="capa2" style="display:none">
-									Capa 2: <select name="capa2"  id="selectCapa2"> 
+									Camada 2: <select name="capa2"  id="selectCapa2"> 
 									<option value="0">  Selecione Sabor
 									<% for(int j= 1; j<= actualOptions.size(); j++) {
 										int aux2 = j - 1;
@@ -178,7 +183,7 @@
 								</div>
 								
 								<div id="capa3" style="display:none">
-									Capa 3: <select name="capa3" id="selectCapa3"> 
+									Camada 3: <select name="capa3" id="selectCapa3"> 
 									<option value="0">  Selecione Sabor 
 									<% for(int j= 1; j<= actualOptions.size(); j++) {
 										int aux2 = j - 1;
@@ -221,7 +226,12 @@
 									int aux2 = j - 1;
 									StepOption step = actualOptions.get(aux2);
 									hashMap.put(i + "" +j, step.getName());
-									hashMapPrice.put(i + "" +j, step.getPrice());
+									//hashMapPrice.put(i + "" +j, step.getPrice());
+									hashMapPrice.put("one" + i + "" +j, step.getPrice());
+									hashMapPrice.put("two" + i + "" +j, step.getPriceTwo());
+									hashMapPrice.put("three" + i + "" +j, step.getPriceThree());
+									hashMapPrice.put("four" + i + "" +j, step.getPriceFour());
+									
 									hashMapId.put(i + "" +j, step.getId());
 									String imagen = step.getImage();	
 									String description = step.getDescription();

@@ -125,19 +125,21 @@ public class CupcakesServlet extends HttpServlet {
 		
 		HttpSession infoPage = request.getSession();
 		
-		String tamInt = request.getParameter("1");
-		String cantInt = request.getParameter("2");
-		String saborInt = request.getParameter("3");
-		String cubiertaInt = request.getParameter("4");
-		String[] colorInt = request.getParameterValues("5");
-		String decorInt = request.getParameter("6");
-		String precio = request.getParameter("priceCake");
+		String tamInt 		= request.getParameter("1");
+		String cantInt 		= request.getParameter("2");
+		String saborInt 	= request.getParameter("3");
+		String cubiertaInt 	= request.getParameter("4");
+		String[] colorInt 	= request.getParameterValues("5");
+		//String decorInt 	= request.getParameter("6");
+		String precio 		= request.getParameter("priceCake");
+		String  decoracion  = "";
+		
 		String cantidadDocenas = "", txtCalcomania = "";
 		if (cantInt.equals("2"))
 			cantidadDocenas = request.getParameter("cantCupcakes");
 		else 
 			txtCalcomania =  request.getParameter("txtCalcomania");
-		String tamano, cantidad, sabor, cubierta, decoracion;
+		String tamano, cantidad, sabor, cubierta;
 		String[] color = null;
 		if (colorInt != null)
 			color = new String[colorInt.length];
@@ -148,7 +150,9 @@ public class CupcakesServlet extends HttpServlet {
 		cantidad = hashMapCup.get("2"+cantInt);
 		sabor = hashMapCup.get("3"+saborInt);
 		cubierta = hashMapCup.get("4"+cubiertaInt);
-		decoracion = hashMapCup.get("6"+decorInt);
+		if (cubierta.contains("Pasta americana")) decoracion	=  request.getParameter("pamertext");
+			
+		//decoracion = hashMapCup.get("6"+decorInt);
 		if (colorInt != null){
 			for (int i = 0 ; i < colorInt.length; i++){
 				color[i] = hashMapCup.get("5"+ colorInt[i]);
@@ -173,17 +177,17 @@ public class CupcakesServlet extends HttpServlet {
 	}
 	
 	static String requestPlain(HttpServletRequest request, HttpServletResponse response, final Properties propertiesFile){
-		String tamano = request.getParameter("tamano");
-		String cantidad = request.getParameter("cantidad");
-		String sabor = request.getParameter("sabor");
-		String cubierta = request.getParameter("cubierta");
-		final String[] color =request.getParameterValues("color");
-		String decoracion = request.getParameter("decoracion");
-		String precio = request.getParameter("priceCupcake");
-		String fecha = request.getParameter("txtFecha");
-		String clientId =  request.getParameter("clientId");
-		String cantDocenas = request.getParameter("cantDocenas");
-		String txtCalcomania = request.getParameter("txtCalcomania");
+		String tamano 			= request.getParameter("tamano");
+		String cantidad 		= request.getParameter("cantidad");
+		String sabor 			= request.getParameter("sabor");
+		String cubierta 		= request.getParameter("cubierta");
+		final String[] color 	= request.getParameterValues("color");
+		String decoracion 		= request.getParameter("decoracion");
+		String precio 			= request.getParameter("priceCupcake");
+		String fecha 			= request.getParameter("txtFecha");
+		String clientId 		=  request.getParameter("clientId");
+		String cantDocenas 		= request.getParameter("cantDocenas");
+		String txtCalcomania 	= request.getParameter("txtCalcomania");
 		
 		System.out.println(tamano + "/" + cantidad + "/" + sabor + "/" + cubierta + "/" + color + "/" +
 				decoracion + "/" + precio + "/" + fecha +	"CantDocenas " + cantDocenas + " calcomani " + txtCalcomania);
@@ -235,12 +239,12 @@ public class CupcakesServlet extends HttpServlet {
 		orderItems.add(item);
 		
 		/* Decoracion */
-		item = new OrderItem();
+		/*item = new OrderItem();
 		item.setPrice(hashMapPrice.get(decoracion));
 		item.setStepOptionId(hashMapId.get(decoracion));
 		item.setCantDocenas(null);
 		item.setTxtCalcomania(null);
-		orderItems.add(item);
+		orderItems.add(item);*/
 		
 		/* Color */
 		if (color != null){

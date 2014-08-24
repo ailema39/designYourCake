@@ -421,8 +421,7 @@ public class SendEmail  extends Thread  {
          	if (relleno != null)
          		messa += " Sabores de camadas:  " + rell + "<br>" ;
          	
-         	messa += " Decora&#231;&#227;o:  " + datos[4] + ".<br><br>" +
-	     		" Pre&#231;o: R$. " + datos[5] + ".<br><br>" +
+         	messa += " Pre&#231;o: R$. " + datos[5] + ".<br><br>" +
 	     		" Data de entrega:  " + datos[7] + ".<br><br>" +	     		
 	     		" <strong>Detalhes do Comprador: </strong> <br><br> " +
 	     		" Nome: " + client.getFirstName() + " "  + client.getLastName() +  "<br>" +
@@ -628,18 +627,20 @@ public class SendEmail  extends Thread  {
 	    		" Tamanho: " + datos[0] + "<br>";
 	         	
         	if (!datos[1].contains("regalar"))
-        		messa += " Quantidade: " + datos[6] + " Docenas"  + "<br>";
+        		messa += " Quantidade: " + datos[6] + " Unidades"  + "<br>";
         	else{
         		messa += " Quantidade: " + datos[1]  + " Unidades<br>";
         		messa += " Texto de la Calcoman&iacute;a: " + datos[5] + "<br>";
         	}
 	     		
         	messa += " Sabor dos cupcakes: " + datos[2]  + "<br>" +
-	     		" Cobertura: " + datos[3]  + "<br>" +
-	     		" Decora&#231;&#227;o: " + datos[4] + "<br>";
+	     		" Cobertura: " + datos[3]  + "<br>";
         	
         	if (color!= null)
         		messa += " Cor (es): " + rell + "<br>";
+        		if (datos[4] !=  null && !datos[4].equals(""))
+        			messa += " - Decora&#231;&#227;o escolhida: " + datos[4] + "<br>";
+        			
 	     		messa += " Pre&#231;o: R$. " + datos[7] + ".<br><br>" +
 	     		" Data de entrega: " + datos[8] + ".<br><br>" +	     		
 	     		" <strong>Detalhes do Comprador:</strong> <br><br> " +

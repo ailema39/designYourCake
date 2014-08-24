@@ -63,7 +63,7 @@
 					Obrigado por nos escolher!
 				<% }else{ %>
 					<span class="bienv-title">Pedimos desculpas!</span><br><br>
-					Ha ocurrido un error al intentar generar tu nueva contrase&ntilde;a. Por favor, tente mais tarde. 
+					Ocorreu um erro ao tentar criar sua nova senha. Por favor, tente mais tarde. 
 					O problema persistir, n&#243;s convidamos voc&#234; a contactar-nos para transmitir o erro. 
 					
 					<br><br>

@@ -84,7 +84,7 @@
 			<form action="CupcakesServlet?typeId=1&pr=2" method="post" id="confirm">
 				<input type="hidden" name="clientId" id="clientId" value="<%= client.getId() %>">
 				<input type="hidden" name="tamano" id="tamano" value="<%= pedido.getTamano() %>">
-				<input type="hidden" name="cantidad"  id="cantidad" value="<%= pedido.getCantidad() %>">
+				<input type="hidden" name="cantidad"  id="cantidad" value="unidades">
 				<input type="hidden" name="sabor"  id="sabor" value="<%= pedido.getSabor() %>">
 				<input type="hidden" name="cubierta" id="cubierta" value="<%= pedido.getCubiertas() %>">
 				<%
@@ -132,8 +132,12 @@
 			    		<strong>Sabor(es) dos Cupcakes:</strong> <%= pedido.getSabor() %>.<br>
 			     		<strong>Cobertura(s):</strong>  <%= pedido.getCubiertas() %>.<br>
 			     		<% if (!colores.equals("")) { %>
-			     		<strong>Color(es):</strong>  <%= colores %><br>
+			     		<strong>Color(es):</strong>  <%= colores %>
 			     		<% } %>
+                        <% if (pedido.getDecoracion()!="") { %>
+			     		- <strong>Decora&#231;&#227;o escolhida</strong> <%= pedido.getDecoracion() %><br>
+			     		<% } %>
+                        
 			    	</div>
 					<div class="total"> Total: <%= pedido.getPrecio() %>.<br></div><br>
 			   </div>
@@ -149,16 +153,13 @@
 					if (error.equals("")){
 			%>
 			<div id="datosVerif" >
-				<div class="bienv">
-					<span class="bienv-title"> Muito obrigado!</span><br><br>
-						Hemos recibido su pedido, en los pr&oacute;ximos d&iacute;as lo
-						estaremos contactando para confirmar su compra y coordinar el env&iacute;o. 
-						<br><br>
+                <div class="bienv">
+					<span class="bienv-title"> Muito obrigado!</span><br/><br/>
+						Recebemos seu pedido nos pr&#243;ximos dias entraremos em contato para confirmar a compra e coordenar entrega.
+						<br/><br/>
 
-						Quaisquer d&#250;vidas ou preocupa&#231;&#245;es voc&#234; pode entrar em contato conosco. <a href="ContactServlet"  class="readmore">Aqui</a> 
-						voc&#234; pode encontrar os nossos dados.
-
-						<br><br>
+						Quaisquer d&#250;vidas ou preocupa&#231;&#245;es voc&#234; pode entrar em contato conosco. <a href="ContactServlet"  class="readmore">Aqui</a> voc&#234; pode encontrar os nossos dados. 
+						<br/><br/>
 
 						Design Your Cake!
 
@@ -166,13 +167,10 @@
 			</div>
 			 <% }else{ %>
 			   <div class="bienv">
-					<span class="bienv-title">&iexcl; Le pedimos mil disculpas!.</span><br><br>
-						Ha ocurrido un error al intentar procesar su solicitud. Lo invitamos a que intente m&aacute;s tarde. 
-						En caso de que el error persista puede comunicarse con nuestro equipo de soporte, bien sea
-						llam&aacute;ndonos directamente o mand&aacute;ndonos un correo. <a href="ContactServlet"  class="readmore">Aqui</a> 
-						voc&#234; pode encontrar os nossos dados.
-
-						<br><br>
+					<span class="bienv-title">Desculpe.</span><br/><br/>
+						Ocorreu um erro ao processar seu pedido. N&#243;s convidamos voc&#234; a tentar mais tarde. 
+						Se o erro persistir pode entrar em contato com nossa equipe de suporte directamente ou enviar um e-mail <a href="ContactServlet"  class="readmore">Aqui</a>.
+						<br/><br/>
 			   </div>
 			    <% } 
 				}
