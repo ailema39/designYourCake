@@ -192,7 +192,7 @@
 												<input name="txtCalcomania" id="txtCalcomania" type="text" >
 											</div>
 											<% }else if (cantidad){ %>
-												<select name="cantCupcakes" id="cantCupcakes">
+												<select name="cantCupcakes" id="cantCupcakes" style="display: none;">
 												<% 
 													for (int k = 20 ; k<101 ; k += 10){
 												%>

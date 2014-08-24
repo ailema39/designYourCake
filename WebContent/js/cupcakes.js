@@ -62,8 +62,11 @@ $(document).ready(function(){
 	/* Click en cualquier radio button del paso 2*/
 	$(".rdB2").click(function(){
 		value = $(this).val();
-		/* Retornar a cero el valor de la cantidad en el select*/
-		if (value != 2){
+		$("#cantCupcakes").val('20');
+		$("#cantCupcakes").show();
+		
+        /* Retornar a cero el valor de la cantidad en el select*/
+		/*if (value != 2){
 			$("#cantCupcakes").val('20');
 			$("#bt2Disable").show();
 			$("#bt2").hide();
@@ -73,7 +76,7 @@ $(document).ready(function(){
 			$("#bt2Disable").hide();
 			$("#bt2").show();
 		         //$("#calcomania").hide();
-		}
+		}*/
 		
 		getPrice(2,value);
 			
