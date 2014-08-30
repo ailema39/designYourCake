@@ -28,7 +28,8 @@
 	<script> 
 	$(function() {
 		$("#datepicker").datepicker({
-			minDate: +2
+			minDate: +3,
+            maxDate: "3M"
 		});
 	});
 	</script> 
@@ -139,7 +140,7 @@
 			     		<% } %>
                         
 			    	</div>
-					<div class="total"> Total: <%= pedido.getPrecio() %>.<br></div><br>
+					<div class="total"> Total: R$ <%= pedido.getPrecio() %>.<br></div><br>
 			   </div>
 			   <div class="dt-buttonInline">
 					<input type="button" name="sbmtButton" class="buttonR" value="Cancelar" onclick="location.href='http://www.designyourcakes.com/CupcakesServlet?typeId=2';"  />
