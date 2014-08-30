@@ -418,6 +418,12 @@ $(document).ready(function() {
 		
 	}
 	
+	$('#target').submit(function() { 
+		setPriceTotal();
+		//alert("funciono!");
+        return true;
+    });
+	
 });
 
 

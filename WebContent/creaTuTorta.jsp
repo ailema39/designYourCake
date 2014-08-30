@@ -80,7 +80,7 @@
 			<div class="asideRight">
 				<% if (client != null){ %>
 				<form id="target" action="ArmaTuTortaServlet?typeId=1&pr=1" method="post"
-				 enctype="multipart/form-data" onSubmit="return setPrice()">
+				 enctype="multipart/form-data">
 				<input type="hidden" id="priceCake"  name="priceCake" value="0">
 					<%
 							for(int i= 1; i<= options.size(); i++) { 	
