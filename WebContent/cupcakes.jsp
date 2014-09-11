@@ -104,7 +104,7 @@
 		
 			</div>
 			<% if (client != null){ %>
-				<div class="titleTortas"> &iexcl; Siga os passos abaixo e inventa los cupcakes que você quer! </div>
+				<div class="titleTortas">Siga e invente os cupcakes que você quiser! </div>
 			<% } %>
 				
 			<jsp:useBean id="options" type="java.util.ArrayList<domain.ListOrder_Step>" scope="request"/>  	

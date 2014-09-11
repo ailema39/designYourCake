@@ -39,9 +39,9 @@
 			</div>
 			<ul style="margin: 0px; ">
 				<li><a href="HomePageServlet">Design Your Cake</a></li>
-				<li><a href="underConstruction.jsp">Criar Bolo</a></li>
+				<li><a href="ArmaTuTortaServlet?typeId=1">Criar Bolo</a></li>
 				<li class="current"><a href="DulcesTortasServlet?typeId=3">Doces</a></li>
-				<li><a href="underConstruction.jsp">Criar Cupcakes</a></li>
+				<li><a href="CupcakesServlet?typeId=2">Criar Cupcakes</a></li>
 				<li><a href="OcasionesEspecialesServlet">Ocasi&#245;es Especiais</a></li>
 				<li><a href="GalleryServlet">Portafolio</a></li>
 				<li><a href="ContactServlet">Contato</a></li>
@@ -66,7 +66,7 @@
     					<div class="dt-title">Cake Pops</div>
                         Delicioso bolo de chocolate, baunilha, red velvet ou cookie em forma de bolas, coberto de chocolate meio amargo ou branco.<br/><br/>
     					<div class="dt-title">Cake Shots</div>
-                        Delicados doces e bolos apresentado em copinhos, uma op&#231;&#227;o exclente para decorar a sua mesa e experimentar um pouco de tudo. 
+                        Delicados doces e bolos apresentado em copinhos, uma op&#231;&#227;o excelente para decorar a sua mesa e experimentar um pouco de tudo. 
                     	<div><ul>
                             <li>Bolo duplo Chocolate</li>
                         	<li>Mouse de Maracuy&aacute;</li>
