@@ -28,7 +28,8 @@
 	<script> 
 	$(function() {
 		$("#datepicker").datepicker({
-			minDate: +2
+			minDate: +3,
+            maxDate: "3M"
 		});
 	});
 	</script> 
@@ -103,7 +104,7 @@
 
 				<div class="bienv">
 					<span class="bienv-title">Confira os detalhes do seu pedido.</span><br><br>
-				  	Por favor, indique a data de entrega para o qual voc&#234; deseja seu pedido: <input type="text" readonly="readonly" id="datepicker" name="txtFecha" /><br />
+				  	Por favor, Indique a data de entrega que voc&#234; deseja seu pedido:<input type="text" readonly="readonly" id="datepicker" name="txtFecha" /><br />
 			  		<span class="error" id="errorDate">Desculpe, você precisa digitar uma data válida da entrega</span><br/><br/>
 					<div id="pedido">
 						<%
@@ -139,7 +140,7 @@
 			     		<% } %>
                         
 			    	</div>
-					<div class="total"> Total: <%= pedido.getPrecio() %>.<br></div><br>
+					<div class="total"> Total: R$ <%= pedido.getPrecio() %>.<br></div><br>
 			   </div>
 			   <div class="dt-buttonInline">
 					<input type="button" name="sbmtButton" class="buttonR" value="Cancelar" onclick="location.href='http://www.designyourcakes.com/CupcakesServlet?typeId=2';"  />

@@ -64,6 +64,7 @@ public class ListPasos implements DatabaseCommand {
 					option.setPriceTwo(rs2.getDouble(8));
 					option.setPriceThree(rs2.getDouble(9));
 					option.setPriceFour(rs2.getDouble(10));
+					System.out.println("price 1" + option.getPrice() +  "price 2" + option.getPriceTwo() + "price 3" + option.getPriceThree() + "Preice 4 "+ option.getPriceFour());
 					steps.add(option);
 				}
 				orderSteps.setOrder(order);

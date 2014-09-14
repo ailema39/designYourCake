@@ -40,10 +40,10 @@
 			</div>
 			<ul style="margin: 0px; ">
 				<li class="current"><a href="HomePageServlet">Design Your Cake</a></li>
-				<li><a href="underConstruction.jsp">Criar Bolo</a></li>
+				<li><a href="ArmaTuTortaServlet?typeId=1">Criar Bolo</a></li>
 				<li><a href="DulcesTortasServlet?typeId=3">Doces</a></li>
-				<li><a href="underConstruction.jsp">Criar Cupcakes</a></li>
-				<li><a href="underConstruction.jsp">Ocasi&#245;es especiais</a></li>
+				<li><a href="CupcakesServlet?typeId=2">Criar Cupcakes</a></li>
+				<li><a href="OcasionesEspecialesServlet">Ocasi&#245;es especiais</a></li>
 				<li><a href="GalleryServlet">Portafolio</a></li>
 				<li><a href="ContactServlet">Contato</a></li>
 			</ul>

@@ -28,7 +28,8 @@
 	<script> 
 	$(function() {
 		$("#datepicker").datepicker({
-			minDate: +2
+			minDate: +3,
+            maxDate: "+3M"
 		});
 	});
 	</script> 

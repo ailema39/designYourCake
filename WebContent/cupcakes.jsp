@@ -104,7 +104,7 @@
 		
 			</div>
 			<% if (client != null){ %>
-				<div class="titleTortas"> &iexcl; Siga os passos abaixo e inventa los cupcakes que você quer! </div>
+				<div class="titleTortas">Siga e invente os cupcakes que você quiser! </div>
 			<% } %>
 				
 			<jsp:useBean id="options" type="java.util.ArrayList<domain.ListOrder_Step>" scope="request"/>  	
@@ -147,7 +147,8 @@
 								
 								%>
 							<label><input  class="rdB<%= i %>" onClick="prueba('<%= imagen %>','<%= i %>', '<%= step.getId() %>', this);" type="<%= type %>" name="<%= i %>" value="<%= j %>" ><span id="name<%= i+ "" +j%>">  <%= step.getName()%><%= imgDescription %></span></label>
-							<span style="display:none;" class="price-int<%= i %><%= j %>"> <%= step.getPrice() %></span>
+							<span style="display:none;" class="price-int1<%= i %><%= j %>"> <%= step.getPrice() %></span>
+                            <span style="display:none;" class="price-int2<%= i %><%= j %>"> <%= step.getPriceTwo() %></span>
                             <% }
 							%>
 						</div>
@@ -185,7 +186,8 @@
 								%>
 										<div class="<%= div %>">
                                            	<label><input  class="rdB<%= i %>"  type="<%= type %>" name="<%= i %>" value="<%= j+1 %>" > <span id="name<%= i+ "" +j%>">  <%= step.getName()%></span>
-											<span style="display:none;" class="price-int<%= i %><%= j %>"> <%= step.getPrice() %></span>
+											<span style="display:none;" class="price-int1<%= i %><%= j+1 %>"> <%= step.getPrice() %></span>
+											<span style="display:none;" class="price-int2<%= i %><%= j+1 %>"> <%= step.getPriceTwo() %></span>
 											<% if (regalo){  %>
 											<div id="calcomania" style="display:none;">
 												<span style="color: gray; font-size: 16px; margin-left: 15px;"> Coloca el texto de tu calcoman&iacute;a aqu&iacute; </span>: 
@@ -264,14 +266,18 @@
 										<div class="options-steps-left">
 											<label><input  class="rdB<%= i %>" onClick="prueba('<%= imagen %>','<%= i %>','<%= step.getId() %>', this );" type="<%= type %>" name="<%= i %>" value="<%= j %>" ><span id="name<%= i+ "" +j%>">  <%= step.getName()%><%= imgDescription %></span></label>
                                             <%= input %>
-											<span style="display:none;" class="price-int<%= i %><%= j %>"> <%= step.getPrice() %></span>
+											<span style="display:none;" class="price-int1<%= i %><%= j %>"> <%= step.getPrice() %></span>
+          	                                <span style="display:none;" class="price-int2<%= i %><%= j %>"> <%= step.getPriceTwo() %></span>
+										
 										</div>	
 								<%
 									}else{
 								%>
 									<label><input  class="rdB<%= i %>" type="<%= type %>" name="<%= i %>" value="<%= j %>" ><span id="name<%= i+ "" +j%>">  <%= step.getName()%><%= imgDescription %></span></label>
                                     <%= input %>
-									<span style="display:none;" class="price-int<%= i %><%= j %>"> <%= step.getPrice() %></span>
+									<span style="display:none;" class="price-int1<%= i %><%= j %>"> <%= step.getPrice() %></span>
+        	                       <span style="display:none;" class="price-int2<%= i %><%= j %>"> <%= step.getPriceTwo() %></span>
+										
 								
 								<% 
 									}

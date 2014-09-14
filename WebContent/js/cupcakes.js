@@ -5,6 +5,7 @@ $(document).ready(function(){
 	var priceCant = 0;
 	var priceTotalAux = 0;
 	var cantCapas = 2;
+    var tam = 1;
 	
 	
 
@@ -56,7 +57,8 @@ $(document).ready(function(){
 		$("#bt1Disable").hide();
 		$("#bt1").show();
 		var j = $(this).val();
-		getPrice(1,j);
+        if (j == 1) tam = 1; else tam = 2;
+   	   	getPrice(1,j);
    	});
 
 	/* Click en cualquier radio button del paso 2*/
@@ -64,21 +66,9 @@ $(document).ready(function(){
 		value = $(this).val();
 		$("#cantCupcakes").val('20');
 		$("#cantCupcakes").show();
-		
-        /* Retornar a cero el valor de la cantidad en el select*/
-		/*if (value != 2){
-			$("#cantCupcakes").val('20');
-			$("#bt2Disable").show();
-			$("#bt2").hide();
-			$("#calcomania").show();
-			cantCapas = 1;
-		}else{
-			$("#bt2Disable").hide();
-			$("#bt2").show();
-		         //$("#calcomania").hide();
-		}*/
-		
-		getPrice(2,value);
+		$("#bt2Disable").hide();
+		$("#bt2").show();
+        getPrice(2,value);
 			
 	});
 	
@@ -102,8 +92,6 @@ $(document).ready(function(){
 		value = $(this).val();
 		getPrice(3,value);
 		//mostrarImgPonque(this);
-		
-		
 	});
 	
 	/* Click en cualquier radio button del paso 4*/
@@ -354,14 +342,14 @@ $(document).ready(function(){
 	/* Obtiene el precio del elemento seleccionado y lo suma al total */
 	function getPrice(i,j){
 		var priceAux = priceTotal;
-		var selectIdAux = '.price-int' + i+j;
-		var price = $(selectIdAux).text();
-		priceCapas = cantCapas*(Number(price));
+        var selectIdAux = '.price-int' + tam + i+j;
+       	var price = $(selectIdAux).text();
+	   	priceCapas = cantCapas*(Number(price));
 		priceAux =  priceAux + Number(priceCapas);
 		var priceText = priceAux + '.00';
 		$('.price').text(priceText);
 		priceTotalAux = priceAux;
-		if (i == 1) priceCant = price;
+		if (i == 2) priceCant = price;
    	}
 	
 	function setPriceTotal(){
@@ -464,10 +452,8 @@ var idP3 = "";
 
 
 	
-
 function prueba(texto, i, id, element){
-	
-	if (i == 3)
+    if (i == 3)
 		mostrarImgPonque(texto, id);
 	else if (i == 4)
 		mostrarImgCubierta(texto, id);
@@ -475,7 +461,6 @@ function prueba(texto, i, id, element){
 		mostrarImgColor(texto, id, element);
 	else if (i == 6)
 		mostrarImgDecoracion(texto, id);
-	
 }
 
 function mostrarImgPonque(imagen, id){
@@ -602,7 +587,7 @@ function mostrarImgCubierta(imagen, id){
 
 		var preColor = "";
         var show = "true";
-		if (valueC == "84" || valueC == "85" || valueC == "86"){
+		if (valueC == "83" || valueC == "84" || valueC == "85"){
 			return;
 		}
         else
@@ -716,7 +701,6 @@ function mostrarImgCubierta(imagen, id){
 	function mostrarImgDecoracion(imagen, id){
 		/* Obtengo el valor de la cubierta escogida */
 		var valueCubierta = cubiertaEscogida;
-        alert(valueCubierta);
 		/* Valor de la decoracion escogida*/
 		var value = id;
 		var decoracion = "";
