@@ -655,6 +655,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e28ee5', end
 #content .home .subtotal-sectionTortas{
 	float: right;
 	margin-right: 20px;
+	clear:both;
+	margin-top:15px;
 }
 
 #content .home .aside .cakes .subtotal-section{

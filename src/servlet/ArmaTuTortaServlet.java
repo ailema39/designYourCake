@@ -39,14 +39,7 @@ public class ArmaTuTortaServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
 	
-	private static String formaInt;
-	private static String tamInt;
-	private static String saborInt;
-	private static String capasInt;
-	private static String cubiertaInt;
-	private static String capa1 ="", capa2="", capa3="";
-	
-    /**
+	/**
      * @see HttpServlet#HttpServlet()
      */
     public ArmaTuTortaServlet() {
@@ -136,15 +129,28 @@ public class ArmaTuTortaServlet extends HttpServlet {
 	static OrderCake requestMultipart(HttpServletRequest request, HttpServletResponse response, String dirPath) throws IOException{
 		
 		MultipartRequest multipart = new MultipartRequest(request, dirPath, 5*1024*1024, new DefaultFileRenamePolicy());
+		HttpSession session = request.getSession();
+		session.removeAttribute("formaInt");
+		session.removeAttribute("tamInt");
+		session.removeAttribute("saborInt");
+		session.removeAttribute("capasInt");
+		session.removeAttribute("capa1");
+		session.removeAttribute("capa2");
+		session.removeAttribute("capa3");
+		session.removeAttribute("cubiertaInt");
 		
-		HttpSession infoPage = request.getSession();
-		final Client client = (Client) infoPage.getAttribute("client");
+		final Client client = (Client) session.getAttribute("client");
 		
-		formaInt = multipart.getParameter("1");
-		tamInt = multipart.getParameter("2");
-		saborInt = multipart.getParameter("3");
-		capasInt = multipart.getParameter("4");
+		String formaInt = multipart.getParameter("1");
+		session.setAttribute("formaInt", formaInt);
+		String tamInt = multipart.getParameter("2");
+		session.setAttribute("tamInt", tamInt);
+		String saborInt = multipart.getParameter("3");
+		session.setAttribute("saborInt", saborInt);
+		String capasInt = multipart.getParameter("4");
+		session.setAttribute("capasInt", capasInt);
 		
+		String capa1="", capa2="", capa3="" ;
 		if (Integer.valueOf(capasInt) != 4 && Integer.valueOf(capasInt) >= 1)
 			capa1 = multipart.getParameter("capa1");
 		if (Integer.valueOf(capasInt) != 4 && Integer.valueOf(capasInt) >= 2)
@@ -152,15 +158,20 @@ public class ArmaTuTortaServlet extends HttpServlet {
 		if (Integer.valueOf(capasInt) == 3)
 			capa3 = multipart.getParameter("capa3");
 		
+		session.setAttribute("capa1", capa1);
+		session.setAttribute("capa2", capa2);
+		session.setAttribute("capa3", capa3);
 		
-		cubiertaInt = multipart.getParameter("6");
+		
+		String cubiertaInt = multipart.getParameter("6");
+		session.setAttribute("cubiertaInt", cubiertaInt);
 		
 		String forma, tamano, sabor, capas,  cubierta;
 		
 		String precio = multipart.getParameter("priceCake");
 		
 		@SuppressWarnings("unchecked")
-		HashMap<String, String> hashMap = (HashMap<String, String>) infoPage.getAttribute("hashMap");
+		HashMap<String, String> hashMap = (HashMap<String, String>) session.getAttribute("hashMap");
 		forma = hashMap.get("1"+formaInt);
 		tamano = hashMap.get("2"+tamInt);
 		sabor = hashMap.get("3"+saborInt);
@@ -189,7 +200,7 @@ public class ArmaTuTortaServlet extends HttpServlet {
 		orderCake.setPrecio(precio);
 	
 		@SuppressWarnings("unchecked")
-		HashMap<String, Long> hashMapId = (HashMap<String, Long>) infoPage.getAttribute("hashMapId");
+		HashMap<String, Long> hashMapId = (HashMap<String, Long>) session.getAttribute("hashMapId");
 	
 		if (hashMapId.get("6"+cubiertaInt) == 42){	
 			File imageFile = multipart.getFile("txtImage");
@@ -238,6 +249,10 @@ public class ArmaTuTortaServlet extends HttpServlet {
 		
 		/* Forma */
 		OrderItem item = new OrderItem();
+		
+		String formaInt = (String) infoPage.getAttribute("formaInt");
+		String tamInt 	= (String) infoPage.getAttribute("tamInt");
+		
 		item.setPrice(hashMapPrice.get("one1"+formaInt));
 		item.setStepOptionId(hashMapId.get("1"+formaInt));
 		orderItems.add(item);
@@ -255,18 +270,26 @@ public class ArmaTuTortaServlet extends HttpServlet {
 		System.out.println("tam " + varTam );
 		
 		/* Sabor */
+		String saborInt = (String) infoPage.getAttribute("saborInt");
+		
+		
 		item = new OrderItem();
 		item.setPrice(hashMapPrice.get(varTam+"3"+saborInt));
 		item.setStepOptionId(hashMapId.get("3"+saborInt));
 		orderItems.add(item);
 		
 		/* Capas */
+		String capasInt = (String) infoPage.getAttribute("capasInt");
 		item = new OrderItem();
 		item.setPrice(hashMapPrice.get(varTam+"4"+capasInt));
 		item.setStepOptionId(hashMapId.get("4"+capasInt));
 		orderItems.add(item);
 		
 		/* Relleno */
+		String capa1 = (String) infoPage.getAttribute("capa1");
+		String capa2 = (String) infoPage.getAttribute("capa2");
+		String capa3 = (String) infoPage.getAttribute("capa3");
+		
 		if (relleno != null){
 			for (int i = 0; i < relleno.length; i++){
 				item = new OrderItem();
@@ -285,6 +308,9 @@ public class ArmaTuTortaServlet extends HttpServlet {
 		}
 		
 		/* Cubierta */ 
+		String cubiertaInt = (String) infoPage.getAttribute("cubiertaInt");
+		
+		
 		item = new OrderItem();
 		item.setPrice(hashMapPrice.get(varTam+"6"+cubiertaInt));
 		item.setStepOptionId(hashMapId.get("6"+cubiertaInt));
@@ -335,6 +361,14 @@ public class ArmaTuTortaServlet extends HttpServlet {
 			capa2="";
 			capa3="";
 			formaInt="";tamInt="";saborInt="";capasInt="";cubiertaInt="";
+			infoPage.removeAttribute("formaInt");
+			infoPage.removeAttribute("tamInt");
+			infoPage.removeAttribute("saborInt");
+			infoPage.removeAttribute("capasInt");
+			infoPage.removeAttribute("capa1");
+			infoPage.removeAttribute("capa2");
+			infoPage.removeAttribute("capa3");
+			infoPage.removeAttribute("cubiertaInt");
 		} catch (Exception e) { 
 			System.out.println("Ocurrio un error al insertar la orden del cliente: " + clientId + ", el error fue:" + e.getMessage());
 			error = "error";
