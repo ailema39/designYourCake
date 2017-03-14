@@ -35,17 +35,17 @@ public class CommandExecutor {
 			ds = (DataSource) ctx.lookup("java:comp/env/jdbc/armatutorta");		*/	
 			//String url = "jdbc:mysql:localhost:3306,localhost:3310/armatutorta";
 			ds = new com.mysql.jdbc.jdbc2.optional.MysqlDataSource();
-			ds.setServerName("198.38.82.101");
+			/*ds.setServerName("198.38.82.101");
 			ds.setPortNumber(3306);
 			ds.setDatabaseName("spookie_dyc");
 			ds.setUser("spookie_root");
-			ds.setPassword("administrator");
+			ds.setPassword("administrator");*/
 			
-			/*ds.setServerName("localhost");
+			ds.setServerName("localhost");
 			ds.setPortNumber(3306);
 			ds.setDatabaseName("armatutorta");
 			ds.setUser("root");
-			ds.setPassword("administrator");*/
+			ds.setPassword("administrator");
 		}
 		
 		return ds;
